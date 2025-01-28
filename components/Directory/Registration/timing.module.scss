@@ -1,0 +1,322 @@
+/* Global styles */
+
+/* Classes used in the Timings component */
+.timings {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1414px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--foundation-neutral-neutral-500);
+  font-family: var(--font-poppins);
+}
+
+/* Timings header */
+.timingsWrapper {
+  position: absolute;
+  top: 35px;
+  left: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--foundation-neutral-neutral-500);
+}
+
+.timings1 {
+  position: relative;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  width: 72px;
+}
+
+.span {
+  color: var(--color-crimson);
+}
+
+/* Instruction for showing business working hours */
+.showYourBusiness {
+  position: absolute;
+  top: 59px;
+  left: 38px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+/* Toggle switch */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.toggleSwitch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--foundation-neutral-neutral-100);
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--foundation-neutral-neutral-50);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input[type="checkbox"]:checked + .toggleSlider {
+  background-color: var(--foundation-primary-primary-500);
+}
+
+input[type="checkbox"]:checked + .toggleSlider:before {
+  transform: translateX(23px);
+}
+
+/* Time Picker */
+.timePicker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 240px;
+}
+
+.timePicker div {
+  display: flex;
+  align-items: center;
+}
+
+.timePicker span {
+  margin-right: 16px;
+  margin-left: 16px;
+  font-weight: 500;
+  color: #1D1B1B;
+}
+
+.timeDropdown {
+  background-color: var(--foundation-neutral-neutral-50);
+  color: var(--foundation-neutral-neutral-300);
+  border: none;
+  outline: none;
+  appearance: none;
+  padding: 4px 8px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-poppins);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.timePickerOptions {
+  background-color: white;
+  color: #1D1B1B;
+  cursor: pointer;
+}
+
+/* "Set same time for all" button */
+.setSameNameForAll {
+  position: absolute;
+  top: 2px;
+  width: 220px;
+  left: 500px;
+}
+
+.setSameNameForAllButton {
+  color: #019DF5;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Day of the week */
+.component101 {
+  border-radius: 18.26px;
+  background-color: var(--foundation-neutral-neutral-100);
+  width: 42px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-11xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.boldWeek {
+  color: #1D1B1B;
+}
+
+/* Closed day */
+.closed,
+.monday {
+  position: relative;
+  font-weight: 500;
+}
+
+.closed {
+  font-size: var(--font-size-sm);
+}
+
+/* List of days and their timings */
+.component102,
+.component102Parent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.component102 {
+  height: 29px;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.component102Parent {
+  position: absolute;
+  top: 95px;
+  left: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Next and Back links */
+.next {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+.nextWrapper {
+  text-decoration: none;
+  top: 913px;
+  left: 816px;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-primary-primary-500);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+
+.backWrapper,
+.frameParent,
+.nextWrapper {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.backWrapper {
+  cursor: pointer;
+  text-decoration: none;
+  top: 913px;
+  left: 724px;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-primary-primary-500);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+
+/* Frame and business information */
+.frameParent {
+  top: 90px;
+  left: calc(50% - 466px);
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--foundation-neutral-neutral-100);
+  width: 933px;
+  height: 1003px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--foundation-neutral-neutral-200);
+  font-family: var(--font-poppins);
+}
+
+.businessInfo,
+.photos {
+  position: relative;
+  font-weight: 500;
+}
+
+.businessInfo {
+  letter-spacing: -0.03em;
+}
+
+.photos {
+  color: var(--foundation-neutral-neutral-200);
+}
+
+.businessInfoParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-101xl);
+}
+
+.frameChild {
+  position: relative;
+  border-radius: var(--br-xl);
+  background: linear-gradient(90deg, #e46d1d, #d9b639);
+  width: 765px;
+  height: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.frameDiv {
+  position: relative;
+  align-self: stretch;
+  border-radius: var(--br-xl);
+  background-color: var(--foundation-neutral-neutral-100);
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.component1017,
+.frameDiv {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.component1017 {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 467px);
+  width: 935px;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+}

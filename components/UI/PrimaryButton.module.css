@@ -1,0 +1,15 @@
+.btn{   
+    font-size: 14px;
+    line-height: 22px;
+    border-radius: 12px;
+    height: 42px;
+    padding-inline: 15px;
+    font-weight: 500;
+    background-color: var(--primary_color);
+    border: 1px solid var(--primary_color);
+    color: #fff;
+}
+.btn:disabled{
+    opacity: .5;
+    cursor: not-allowed;
+}

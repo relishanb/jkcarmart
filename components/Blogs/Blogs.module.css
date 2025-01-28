@@ -1,0 +1,21 @@
+.banner{
+    display: flex;   
+    justify-content: center;
+    align-items: center;    
+    background: rgba(0, 0, 0, .8) url("/bg-blogs.jpg");
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: calc(100vh - 120px);
+    background-blend-mode: overlay;    
+    background-position: center !important;
+}
+.banner_heading{
+    font-size: 42px;
+    color: #ffe0d1;
+    max-width: 800px;
+    text-align: center;
+}
+
+.banner_heading span{
+    color: var(--primary_color);
+}

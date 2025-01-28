@@ -1,0 +1,617 @@
+.carDetailedPage{
+    background-color: #FAFAFA;
+    z-index: 1;
+}
+
+.carImages{
+position: relative;
+}
+.carImages > div:not(.ad_views,.carDetails){
+    text-align: center;
+    
+    border-radius: 10px;
+    display: flex;
+    align-items: center;    
+    background-color: #fff;
+}
+.ad_views{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    background-color: #000;
+    color: #fff;
+    z-index: 2;
+    padding: 5px 15px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px ;
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+.ad_views i{
+    display: inline-flex;
+}
+.carImages img{
+    max-height: 353px;
+    border-radius: 5px;
+    cursor: zoom-in;
+}
+
+.card1{
+    display: flex;
+padding: 4px 16px;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+align-self: stretch;
+border-radius: 6px;
+border: 1px solid var(--foundation-neutral-neutral-100, #DEDEDE);
+background: #FFF;
+margin-bottom: 8px;
+}
+
+.card2{
+    display: flex;
+padding: 12px 16px;
+flex-direction: column;
+align-items: center;
+gap: 19px;
+border-radius: 6px;
+border: 1px solid var(--foundation-neutral-neutral-100, #DEDEDE);
+background: #FFF;
+}
+
+
+.carDetails{
+    display: flex;
+   flex-direction: column;
+   margin-top: 24px;
+
+}
+
+
+.table_outer{    
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid var(--foundation-neutral-neutral-100, #DEDEDE);
+  padding: 40px 20px;
+//   .table:first-child{
+//     margin-bottom: 40px;
+//   }
+}
+
+.table{
+    display: flex;
+    flex-wrap: wrap;    
+    gap: 40px; 
+}
+
+.tableRow{
+    flex-basis: calc(25% - 40px);     
+    display: flex;
+    flex-direction: column;
+  
+  
+  gap: 4px;
+}
+
+.tableRow_double{
+    flex-basis: calc(50% - 40px);
+}
+.carDetails1 h1{
+   
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 132.5%; 
+}
+
+.Brand{
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132.5%; 
+    letter-spacing: -0.42px;
+}
+
+.carName{
+    display: flex;
+    align-items: center;
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%; 
+letter-spacing: -0.48px;
+margin-top: 4px; 
+
+word-wrap: break-word;
+white-space: normal;
+}
+
+.similarCars{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ViewButton {
+    display: flex;
+    margin-top: 34px;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 2px solid var(--foundation-primary-primary-500, #E46D1D);
+    color: var(--foundation-primary-primary-400, #E98A4A);
+    
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.55px;
+}
+
+.horizontalLine {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px 24px;
+  }
+
+  
+  
+  .centeredText {
+    text-align: center;
+    margin: 0 10px; 
+  }
+  
+  .horizontalLineItem1 {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(170deg, rgba(151, 150, 150, 0.00) 0%, #979696 99.89%);
+  }
+
+  .horizontalLineItem2{
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(270deg, rgba(151, 150, 150, 0.00) 0%, #979696 99.89%);
+  }
+
+  .sellYourCarCont{
+    display: flex;
+    justify-content: start;
+  }
+  
+  .sellYourCarAd{
+    display: flex;
+padding: 24px;
+align-items: center;
+border-radius: 6px;
+background: linear-gradient(90deg, #FFEDC9 0.06%, #FFEDC9 52.6%, #E98A4A 92.65%);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .sellYourCarSection{
+    display: flex;
+    justify-content: space-between;
+    gap:88px;
+  }
+
+  .section1{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: 8px;
+  }
+
+  .headingText{
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 132.5%; 
+  }
+
+  .otherText{
+    align-self: stretch;
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132.5%;
+    // margin: auto 0; 
+  }
+
+ 
+
+  .BrowseButton {
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid var(--foundation-primary-primary-500, #E46D1D);
+    background: var(--foundation-primary-primary-500, #E46D1D);
+    color: #FFF;
+    margin-top: 8px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 132.5%;
+}
+
+.BannerSellCarImg{
+    width: 313px;
+height: 144.174px;
+flex-shrink: 0;
+}
+.info_block{
+    background: #fff;
+    border: 1px solid rgba(36,39,44,.1);
+    box-shadow: 0px 6px 10px rgb(0 0 0 / 5%);
+    border-radius: 16px;
+    padding: 24px 30px;
+    margin-bottom: 10px;  
+    margin-top: 20px;
+
+    .row_car_details{
+        column-gap: 50px;
+    }
+
+    .block:not(:last-child) {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #efefef;
+        }
+
+    .heading{
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        margin-top:0 ;
+    }
+    ul{
+        display: table;
+      margin-top: -16px;
+    }
+    li{
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+    }
+    li span{
+        display: table-cell;
+        padding-bottom: 10px;
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%;
+        letter-spacing: -0.48px;
+    }   
+    li span:first-child{
+        padding-right: 20px;
+        color: var(--foundation-neutral-neutral-300, #686666);
+
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 132.5%; 
+letter-spacing: -0.42px;
+    }  
+    .label{
+        color: #888;
+        margin-right: 10px;
+    }
+}
+
+.sharing_block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    span{
+        font-weight: 500;
+    }
+    button{
+        line-height: 0 !important;
+    }
+}
+
+.seller_details {
+  
+    padding: 5px 15px;
+  
+
+    .upperRightSection1 {
+        display: flex;
+        gap: 6px;
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%;
+       
+    }
+
+    .upperRightSection1Row2{
+        display: flex;
+        color: var(--foundation-neutral-neutral-300, #686666);
+ 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: -4px;
+    line-height: 132.5%;
+    gap: 6px;
+    }
+
+    .upperRightSection1Row3{
+        display: flex;
+        color: var(--foundation-neutral-neutral-300, #686666);
+ 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+   
+    line-height: 132.5%;
+    gap: 6px;
+    }
+    
+    .Dot {
+        margin-top: -2px;
+    }
+    li:not(:last-child){
+        margin-bottom: 10px;
+    }
+    .icon{
+        color: #777;
+    }
+
+    
+}
+
+
+
+
+
+@media (max-width:767px){
+    .ViewButton{
+        margin-top: -15px;
+    }
+    .carImages{
+        width:100%;
+        margin-bottom: 20px;
+    }
+    
+    .carCard{
+        width:100%
+    }
+    .info_block li span:first-child{
+        width: 175px;
+    }
+    .hide_mobile{
+        display: none;
+    }
+
+    .table {
+       padding: 0 16px;
+        gap: 0 50px; 
+      }
+      .tableRow {
+        flex-basis: calc(50% - 25px); 
+        margin-top: 16px;
+        margin-bottom: 6px;
+      }
+      .sellYourCarSection {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+      }
+    
+      .section1 {
+        order: 2;
+      }
+      .BannerSellCarImg {
+        margin-top: 20px; 
+        margin-bottom: -50px; 
+      }
+      .card2{
+        display: flex;
+        align-self: stretch;
+    }
+
+    .static_section {
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 8px;
+        position: fixed;
+        bottom: 66px;
+        width: 100%;
+        background: #FFF;
+        box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.30);
+        color: #fff;
+        padding: 18px;
+        text-align: center;  
+        z-index: 100; 
+      }
+      
+      .carDetailedPage {
+        position: relative;
+        z-index: 1; 
+      }
+
+.card1{
+    margin-top: -35px;
+}
+    
+      .contactSeller {
+        display: flex;
+        padding: 10px 16px;
+        
+        justify-content: center;
+        align-items: center;
+        border: none;
+        gap: 8px;
+        border-radius: 6px;
+background: var(--foundation-primary-primary-500, #E46D1D);
+      }
+
+      .contactSeller span {
+        color: var(--foundation-neutral-neutral-50, #F3F3F3);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%;
+      }
+
+      .phone_icon{
+       
+        margin: 0;
+      }
+    
+    .wishlistCont{
+        display: flex;
+        padding: 12px 22px;
+        align-items: flex-start;
+        gap: 8px;
+        border-radius: 6px;
+        border: 0.5px solid var(--foundation-neutral-neutral-200, #979696);
+        background: #FFF;
+        color: var(--foundation-neutral-neutral-200, #979696);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%; 
+    }
+    .sold::before, .sold::after{
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+    }
+     .sold::before{    
+        width: 47px;
+        height: 47px;    
+        border:2px solid #ed1f29;    
+    }
+     .sold::after{    
+        width: 57px;
+        height: 57px;    
+        border: 2px dotted #999;    
+    }
+
+      .hide_mobiles{
+        display: none;
+    }
+
+    .ad_actions{
+        display: flex;
+        column-gap: 20px;
+    }
+    .ad_actions .shortlist{
+        display: inline-flex;   
+    }
+    .ad_actions .icon{
+        display: flex;   
+      font-size: 18px;
+         margin-right: -3px;
+         margin-top: 1px;
+    }
+    .ad_actions .icon:hover{
+        color: #333;
+    }
+    .ad_actions .active .icon{
+        color: var(--primary_color);
+        transition: color .5s;
+    }
+
+    .ad_actions span{
+        color: var(--foundation-neutral-neutral-200, #979696);
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%
+    }
+
+
+    .contactCard{
+        display: flex;
+        flex-direction: column;
+        padding: 16px 64px;
+        background: #FFF;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;
+    gap: 12px;
+    color: var(--foundation-neutral-neutral-300, #676668);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132.5%; 
+    letter-spacing: -0.36px;
+    }
+    
+    .contactCardLi{
+        display: flex;
+        gap: 12px;
+    }
+    
+    .section1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .otherText1{
+        display: flex;
+        flex-wrap: wrap;
+        color: var(--foundation-neutral-neutral-300, #686666); 
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 132.5%; 
+       
+    }
+
+    .similarCars{
+        margin-top: -80px;
+        margin-bottom: -80px;
+    }
+
+ .sellYourCarCont{
+    display: flex;
+    flex-direction: column;
+ }
+    
+      
+}
+
+@media (min-width:768px){
+    .hide_desktop{
+        display: none;
+       
+    }
+}
+
+
+
+
+
+//swiper
+.centered-image {
+    display: block;
+    margin: 0 auto; 
+  }

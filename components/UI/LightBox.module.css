@@ -1,0 +1,82 @@
+ 
+  .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;  
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .modalContent{    
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    animation: slide-down 300ms ease-out forwards;    
+  }  
+.modalClose{
+  border: 0;
+  background: none;  
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  right: 20px;
+} 
+.modalClose:hover{  
+  opacity: 1;
+} 
+  .modalBody{
+    max-height: calc(100vh - 60px);
+    overflow: auto; 
+    padding: 20px; 
+    text-align: center;      
+  }  
+  
+
+  @media (max-width: 991px) {    
+    .modal{
+      display: flex;  
+      align-items: center;
+    }
+
+    .modalDialog.full_width_center {      
+      margin: 10px;    
+      
+    }
+    /* .modalBody{
+      max-height: calc(100vh - 20px);      
+    }  */
+    .modalBody img{
+      margin-top: 10px;      
+    } 
+  }
+
+
+  @media (min-width: 992px) {
+    .modalDialog {
+      position: relative;      
+    }
+    .modalDialog:not(.full_width_center) {      
+      width: 900px;     
+      margin: 30px auto; 
+    }
+    .modalDialog.full_width_center {      
+      margin: 30px;      
+    }
+  }
+  
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

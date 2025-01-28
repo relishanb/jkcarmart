@@ -1,0 +1,16 @@
+.active .filter_title{
+    color: var(--primary_color);
+}
+@media (max-width: 767px){
+    .filter_title{
+        display: none;
+    }
+}
+@media (min-width: 768px){    
+    .filter_title{
+        font-size: 16px;
+        font-weight: 500;
+        color: #1D1B1B;
+        margin-top: 0;        
+    }    
+}

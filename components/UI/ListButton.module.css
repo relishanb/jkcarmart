@@ -1,0 +1,14 @@
+.list_btn {    
+    padding: 10px 0;    
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: none;
+}
+.list_btn:not(:last-child){
+    border-bottom: 1px solid #e2e2e2 ;
+}
+.list_btn:hover{
+    color: rgb(255, 76, 0);
+    background: rgb(255, 242, 235);
+}

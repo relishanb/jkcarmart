@@ -1,0 +1,23 @@
+.applied_filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 16px;
+}
+.applied_filters li{
+    font-size: 12px;
+    color: var(--primary_color);
+    font-weight: 400;
+    border: 1px solid var(--primary_color);
+    background-color: #FCF0E8;
+    border-radius: 12px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.applied_filters li span{
+    font-weight: 100;
+    cursor: pointer;
+    line-height: 0;
+}

@@ -1,0 +1,914 @@
+.overAllDiv{
+    background: var(--foundation-neutral-neutral-50, #F3F3F3);
+}
+
+
+.video_card {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.thubnail_container {
+    background: lightgray;
+    padding: 10px;
+    text-align: center;
+
+    img {
+        max-height: 100%;
+        filter: brightness(0.8);
+    }
+}
+
+.video_container,
+.thubnail_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+
+    .video_play_icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0px 20px 40px 0px rgba(1, 16, 58, 0.14);
+        text-align: center;
+        line-height: 85px;
+        font-size: 30px;
+        position: relative;
+        transition: all 0.3s linear;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        color: var(--primary_color);
+    }
+
+    .video_play_icon::before,
+    .video_play_icon::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: 0.2px solid #fff;
+        border-radius: 50%;
+        opacity: .4;
+        position: absolute;
+        left: 0;
+    }
+
+    .video_play_icon::before {
+        background: rgb(255, 255, 255);
+        transform: scale(1.4);
+        animation: videoplaybtnanimation .5s linear 1s infinite alternate;
+    }
+
+}
+
+@keyframes videoplaybtnanimation {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+//Container first
+.ContainerFirst {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.HeadingText {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 34px;
+    font-style: normal;
+    line-height: 114.5%;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.Buying {
+    line-height: normal;
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #FF8B3D 22.8%, #FFCC47 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.And {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.Selling {
+    background: linear-gradient(90deg, #FF924A 75.52%, #EFCD75 99.18%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.JkCarMartText {
+    align-self: stretch;
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.BrowseButton {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid var(--foundation-primary-primary-500, #E46D1D);
+    background: var(--foundation-primary-primary-500, #E46D1D);
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 132.5%;
+}
+
+.SellButton {
+    display: flex;
+    padding: 8px 21px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 2px solid var(--foundation-primary-primary-500, #E46D1D);
+    background: #FFF;
+    color: var(--foundation-primary-primary-400, #E98A4A);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 132.5%;
+}
+
+.HeroImage {
+    width: 460px;
+    height: 320px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+
+    .ContainerFirst {
+        margin-top: -64px;
+        text-align: center;
+        margin-bottom: -44px;
+    }
+
+    .BrowseButton{
+        font-size: 16px;
+    }
+
+    .SellButton{
+        font-size: 16px;
+    }
+
+    .HeadingText {
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 114.5%;
+    }
+
+    .HeadingText span {
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .Heading h3 {
+        margin-top: -10px;
+    }
+
+    .HeroImage {
+        display: none;
+    }
+
+    // .Heading{
+    //     margin-top: -80px;
+    // }
+
+    .Buttons {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .JkCarMartText {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px 12px;
+    }
+
+}
+
+//Container first ends here
+
+.SectionGray {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//Container Second
+
+
+.ContainerSecond {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    align-self: stretch;
+    padding-bottom: 40px;
+}
+
+.NewlyText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newlyAddedText {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    margin-left: -580px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 132.5%;
+}
+
+.Arrow {
+    display: flex;
+    cursor: pointer;
+    gap: 4px;
+    font-size: 30px;
+    line-height: 0;
+}
+
+.newlyAdded {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+    >div {
+        width: calc(25% - 15px) !important;
+        padding: 0 !important;
+    }
+}
+
+.newlyAddedItems {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 8px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.16);
+}
+
+.newlyAddedImg {
+    height: 144px;
+    align-self: stretch;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.newlyAddedItemContent {
+    padding-left: 6px;
+}
+
+.RowFirst {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2px;
+}
+
+.newlyAddedItemName {
+    display: flex;
+    gap: 2px;
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.55px;
+    letter-spacing: -0.42px;
+}
+
+.Dot {
+    margin-top: -2px;
+}
+
+.heartIcon {
+    cursor: pointer;
+    padding-right: 2px;
+}
+
+.itemPrice {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.ItemType {
+    display: flex;
+    gap: 2px;
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.55px;
+    letter-spacing: -0.42px;
+    padding-bottom: 6px;
+}
+
+.HorizontalLine {
+    border-radius: 0px 0px 6px 6px;
+    border-top: 1px solid var(--foundation-neutral-neutral-100, #DEDEDE);
+    background: #FFF;
+}
+
+.ViewBut {
+    display: none;
+}
+
+.ViewButton {
+    margin-top: 24px;
+}
+
+
+/* Mobile responsive styles */
+
+@media (max-width: 767px) {
+
+    .newlyAdded {
+        flex-wrap: wrap;
+        gap: 8px;
+
+        div {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+    }
+
+.NewlyText{
+    margin-top: -40px;
+    
+}
+
+    .hide-arrows {
+        display: none;
+    }
+
+    .newlyAddedItems {
+        width: calc(50% - 8px);
+
+    }
+
+    .newlyAddedItemName {
+        font-size: 12px;
+    }
+
+    // .Arrow {
+    //     display: none;
+    // }
+
+
+
+    .ViewButton {
+        margin: 0px;
+    }
+}
+
+//Container Second ends here
+
+//Conatainer Third
+
+
+.JKCraMartWorks {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 24px;
+    margin-left: -890px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 31.8px;
+    
+}
+
+.Vectors {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 150px;
+    flex: 1 0 0;
+}
+
+.vectorImg {
+    width: 131.923px;
+    height: 140px;
+}
+
+.VectorList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.Text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.55px;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--foundation-neutral-neutral-300, #686666);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.55px;
+}
+
+.ConatinerThirdHeadingMobile{
+    display: none;
+}
+
+
+@media (max-width: 767px) {
+
+
+
+
+
+    .ConatinerThird {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+        margin-top: 16px;
+        border-radius: 12px;
+    }
+
+.ConatinerThirdHeadingDesktop{
+    display: none;
+}
+
+.ConatinerThirdHeadingMobile{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: -15px;
+}
+
+    .Vectors {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+        flex: 1 0 0;
+        padding: 16px;
+        margin-top: -60px;
+        
+
+    }
+
+    .vectorImg {
+        
+        width: 72px;
+height: 88px;
+flex-shrink: 0;
+    }
+
+    .VectorList {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    
+
+    .JKCraMartWorks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: -60px;
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-family: Poppins;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18.55px;
+    }
+
+    .VectorList:nth-child(2) {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .paragraph {
+        text-align: left;
+        color: var(--foundation-neutral-neutral-300, #686666);
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 132.5%;
+margin-top: 4px;
+    }
+
+    .JKcarmartWorks{
+        margin-top: -30px;
+    }
+
+    .Text {
+        text-align: left; 
+        display: block; 
+        margin-top: 0; 
+        font-size: 14px;
+font-style: normal;
+font-weight: 700;
+    }
+}
+
+
+//Container Third ends here
+
+//Container Fourth
+
+.ConatinerFourth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.ChooseCar {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 24px;
+    margin-left: -920px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 31.8px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.CarType {
+    display: flex;
+    background: var(--foundation-secondary-secondary-300, #FFEDC9);
+    padding: 12px 24px;
+ 
+
+   
+    gap: 32px;
+    border-radius: 20px;
+
+    margin-bottom: 24px;
+}
+
+.CarTypeList {
+    display: flex;
+    
+    padding: 2px 6px;
+    flex-direction: column;
+    
+    align-items: center;
+    gap: 4px;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.CarTypeList.active,
+.CarTypeList:hover {
+    background: #FCA14D;
+    color: #FFF;
+}
+
+.CarTypeList:hover {
+    box-shadow: 0px 3.16048px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.chooseType {
+    display: flex;
+    justify-content: center;
+    padding-left: 12px;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.chooseTypeItems {
+    display: flex;
+    flex-direction: column;
+    width: 263px;
+    gap: 8px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.16);
+
+}
+
+.chooseTypeItemContent {
+    padding-left: 8px;
+    padding-bottom: 6px;
+}
+
+.chooseTypeItemName {
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.55px;
+    letter-spacing: -0.42px;
+}
+
+.chooseTypeItemPrice {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.Onwards {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+
+
+
+/* For Mobile View */
+@media (max-width: 767px) {
+
+    // .ConatinerFourth {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     gap: 24px;
+    //     padding-bottom: 80px;
+    //     padding-top: 48px;
+    // }
+
+ 
+
+    .ChooseCar {
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-family: Poppins;
+        font-size: 24px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 31.8px;
+        margin-left: -130px;
+        padding: 0px 34px;
+    }
+
+    .CarType {
+        display: flex;
+        padding: 12px 24px;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .CarTypeList {
+        display: flex;
+        flex: 1 0 calc(50% - 100px);
+        padding: 2px 2px;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+
+    .chooseType {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .chooseTypeItems {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 calc(50% - 8px);
+        gap: 8px;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.16);
+    }
+}
+
+
+//Container Fourth ends here
+
+//Container Fifth
+
+.ConatinerFifth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 80px;
+    padding-top: 48px;
+}
+
+.PopularBrandsText {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 24px;
+    margin-left: -820px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 31.8px;
+}
+
+.PopularBrands {
+    display: flex;
+
+    gap: 24px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.PopularList {
+    display: flex;
+    width: 116px;
+    height: 100px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.popularName {
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10.92px;
+}
+
+.ViewBrand {
+    display: flex;
+    margin-top: 24px;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 2px solid var(--foundation-primary-primary-500, #E46D1D);
+    color: var(--foundation-primary-primary-400, #E98A4A);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.55px;
+}
+
+
+
+/* For Mobile View */
+@media (max-width: 767px) {
+    .section_hero {
+        margin-top: 70px;
+    }
+
+    .PopularBrandsText {
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 132.5%;
+    }
+
+    .PopularBrands {
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 14px;
+    }
+
+    .PopularList {
+        display: flex;
+        width: 80px;
+        height: 72px;
+        padding: 7px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 11.192px;
+        background: #FFF;
+        box-shadow: 0px 0.69951px 2.09852px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .popularImg {
+        width: 63.655px;
+        height: 45.468px;
+        flex-shrink: 0;
+        margin-bottom: 3px;
+    }
+
+    .popularName {
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-size: 9.793px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 78%;
+        margin: 0px;
+    }
+
+    .ViewBrand {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
+//Container Fifth ends here
+
+.list_dotted{
+    list-style: disc !important;
+    padding-left: 30px;
+    li:not(:last-child){
+        margin-bottom: 10px;
+    }
+}

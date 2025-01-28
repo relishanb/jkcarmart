@@ -1,0 +1,15 @@
+.filter_form {
+    display: flex;
+    flex-direction: column;    
+    row-gap: 10px; 
+
+    .filter_check_block{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+}
+
+
+
+

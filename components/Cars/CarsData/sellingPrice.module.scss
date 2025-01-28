@@ -1,0 +1,222 @@
+.noFuelType{
+    min-width: 50px;
+}
+.card_body {
+    display: flex;
+    flex-direction: column;
+    // padding: 10px;
+    // cursor: pointer;
+    
+}
+.ad_detail {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.ad_detail:not(:last-child) {
+    margin-bottom:20px;
+}
+.ad_detail .icon {
+    color:#777;
+    transition: color .5s;
+   
+}
+.sellingPrice{
+    display: flex;
+    color: gray;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%; 
+padding-top: 4px;
+padding-left: 4px;
+}
+.ad_price {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.ad_price .currency {
+    font-size: 28px;
+}
+.ad_price .price{
+    
+    font-size: 34px;
+}
+.ad_title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin:0;
+}
+.ad_detail_multi {
+    border: 0.5px solid rgb(212, 212, 212);
+    border-radius: 12px;
+    padding: 8px;
+}
+.ad_detail_multi span {
+    font-size: 12px;
+}
+.ad_actions{
+    display: flex;
+    column-gap: 20px;
+}
+.ad_actions .shortlist{
+    display: inline-flex;   
+}
+.ad_actions .icon{
+    display: flex;   
+  font-size: 18px;
+     margin-right: -3px;
+     margin-top: 1px;
+}
+.ad_actions .icon:hover{
+    color: #333;
+}
+.ad_actions .active .icon{
+    color: var(--primary_color);
+    transition: color .5s;
+}
+.compare label{
+    color: #777;
+}
+.sold{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: #fff;
+    border: 2px solid #ed1f29;
+    border-radius: 50%;
+    width: 67px;
+    height: 67px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 14px;
+   font-weight: 600;
+   color: #ed1f29;
+}
+
+// .contactContainer{
+//     display: flex;
+
+// padding: 10px 52px;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// gap: 8px;
+// border-radius: 6px;
+// // background: var(--foundation-secondary-secondary-100, #FFF7E6);
+// }
+
+.contactCard{
+    display: flex;
+    flex-direction: column;
+    
+    background: #FFF;
+box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.16);
+border-radius: 12px;
+gap: 12px;
+color: var(--foundation-neutral-neutral-300, #676668);
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%; 
+letter-spacing: -0.36px;
+}
+
+.contactCardLi{
+    display: flex;
+    gap: 12px;
+}
+
+.EyeIconCont{
+display: flex;
+gap: 2px;
+}
+
+.EyeIcon{
+    padding-top: -4px;
+}
+
+.EyeIconText{
+    color: var(--foundation-neutral-neutral-300, #686666);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 132.5%; 
+letter-spacing: -0.36px;
+}
+
+.contactSeller{
+    display: flex;
+// padding: 14px 98px;
+border: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 6px;
+// background: var(--foundation-primary-primary-500, #E46D1D);
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.43);
+color: var(--foundation-neutral-neutral-50, #F3F3F3);
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%
+}
+
+.wishlistCont{
+    display: flex;
+    margin-top: 19px;
+padding: 8px;
+align-items: flex-start;
+gap: 8px;
+border-radius: 6px;
+border: 0.5px solid var(--foundation-neutral-neutral-200, #979696);
+background: #FFF;
+color: var(--foundation-neutral-neutral-200, #979696);
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%; 
+}
+.sold::before, .sold::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+ .sold::before{    
+    width: 47px;
+    height: 47px;    
+    border:2px solid #ed1f29;    
+}
+ .sold::after{    
+    width: 57px;
+    height: 57px;    
+    border: 2px dotted #999;    
+}
+
+@media (max-width: 767px) {
+    .card_body .contactContainer {
+      display: none;
+    }
+
+    .body .wishlistCont {
+        display: none;
+      }
+
+    .card_body{
+        padding: 0px 2px;
+      }
+
+      .ad_price{
+        margin-bottom: -27px;
+      }
+  }

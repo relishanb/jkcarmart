@@ -1,0 +1,66 @@
+.footer_area, .footer_area a {
+    color: #fff;
+}
+
+.footer_top {
+    padding: 80px 0;
+    background: #444 url(../img/footer-bg.png) center no-repeat;
+    background-size: contain;
+}
+
+.footer_widget:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.footer_area .mobileapp_container {
+    background-color: #eee;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.footer_area .title {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #f2d8ca;
+}
+
+.footer_area .link_list li:not(:last-child, .divider) {
+    margin-bottom: 5px;
+}
+
+.footer_area .link_list_inline li {
+    display: inline-block;
+}
+
+    .footer_area .link_list_inline li:not(:last-child)::after {
+        content: "|";
+        padding: 0 7px;
+        color: #777;
+    }
+
+.footer_area .brand-sharing {
+    display: flex;
+    align-items: center;
+}
+
+    .footer_area .brand-sharing li:not(:last-child) {
+        margin-right: 20px;
+    }
+.link_list i{
+    color:#aaa;
+    margin-right:5px;
+}
+.footer_area .divider {
+    border-top: 1px dashed #ddd;
+    margin: 20px 0;
+}
+@media (max-width: 991px) {
+    .footer_area .row > *:not(:last-child) {
+        margin-bottom:30px;
+    }
+}

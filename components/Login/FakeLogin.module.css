@@ -1,0 +1,14 @@
+.fake_login_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.fake_login{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: #eee;
+    padding: 50px;
+    border-radius: 10px;
+}

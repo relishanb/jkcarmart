@@ -1,0 +1,24 @@
+
+.skeletonLoading {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px;
+  }
+  
+  .header {
+    height: 20px;
+    width: 80%;
+    background-color: #f0f0f0;
+    margin-bottom: 16px;
+  }
+  
+  .content {
+    height: 15px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin-bottom: 8px;
+  }
+  

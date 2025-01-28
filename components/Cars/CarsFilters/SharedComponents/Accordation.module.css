@@ -1,0 +1,30 @@
+.active .filter_title, .active svg{
+    color: var(--primary_color);
+}
+@media (max-width: 767px){
+    .accordion{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .accordion{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        cursor: pointer;
+    }
+    .accordion_block:not(.open) .accordion{
+        margin-bottom: 0;
+    }
+    .filter_title{
+        font-size: 16px;
+        font-weight: 500;
+        color: #1D1B1B;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .accordion_block:not(.open) .panel{
+        display: none;
+    }
+}

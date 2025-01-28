@@ -1,0 +1,24 @@
+.card .form_body{
+    padding: 20px;
+}
+.tab_content_data{
+    max-height: 350px;
+    overflow: auto;
+}
+.form_action{
+    text-align: center;
+    margin-top: 50px;
+    background-color: #eeeeee;
+    padding: 20px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.form_action button:first-child{
+    margin-right: 10px;
+}
+.car_info{
+    width: 350px;
+}
+.form_error{
+    color: red
+}

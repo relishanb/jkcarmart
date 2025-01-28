@@ -1,0 +1,14 @@
+.filter_items_sub {
+    overflow: hidden;
+    padding: 15px 0 15px 15px;
+}
+.filter_items_sub_inner{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.filter_item_sub {
+   display: flex;
+   align-items: center;  
+   column-gap: 10px;
+}

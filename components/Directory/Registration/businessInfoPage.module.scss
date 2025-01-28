@@ -1,0 +1,407 @@
+
+.span {
+  color: var(--color-crimson);
+}
+.businessName,
+.businessprofessionalName {
+  position: relative;
+  font-weight: 500;
+  
+}
+.businessprofessionalName {
+  letter-spacing: -0.03em;
+}
+.businessprofessionalNameWrapper {
+  border-radius: var(--br-3xs);
+  align-self: stretch;
+  border: none;
+  outline: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-sm);
+
+}
+.businessNameParent {
+  width: 744px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  color: #000
+}
+.whatsappNumberWrapper {
+  border-radius: var(--br-3xs);
+  border: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  width: 179px;
+  outline: none;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-sm);
+  color: #000;
+}
+.whatsappNoParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.frameContainer,
+.numberOfYearsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.numberOfYearsWrapper {
+  border-radius: var(--br-3xs);
+  border: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  height: 40px;
+  outline: none;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: #000;
+}
+.frameContainer {
+  align-items: flex-start;
+  gap: 100px;
+}
+.address1Wrapper {
+  border-radius: var(--br-3xs);
+  border: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  width: 387px;
+  outline: none;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+}
+.address1Wrapper,
+.cityWrapper,
+.frameParent1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.cityWrapper {
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  border: none;
+  outline: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.iconTextWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  border: none;
+  outline: none;
+  background-color: var(--foundation-neutral-neutral-50);
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.iconsInstaWrapper,
+.iconsWeblinkParent {
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-neutral-neutral-50);
+  overflow: hidden;
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  align-items: center;
+  justify-content: flex-start;
+}
+.frameParent1 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-5xs);
+  font-size: var(--font-size-sm);
+  color: var(--foundation-neutral-neutral-300);
+}
+.iconsWeblink {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.iconsWeblinkParent {
+  width: 316px;
+  box-sizing: border-box;
+  gap: var(--gap-5xs);
+}
+
+.iconsInstalinkParent {
+  width: 316px;
+  box-sizing: border-box;
+  gap: var(--gap-5xs);
+}
+
+.frameDiv,
+.frameParent2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameParent2 {
+  flex-direction: column;
+  gap: var(--gap-5xs);
+  font-size: var(--font-size-sm);
+  color: #000;
+}
+.frameDiv {
+  flex-direction: row;
+  gap: 41px;
+}
+.selectTheMode {
+  position: relative;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--foundation-neutral-neutral-200);
+}
+.paymentsOptionsParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cash {
+  position: relative;
+  letter-spacing: -0.03em;
+  line-height: 132.5%;
+}
+.component94,
+.component941 {
+  border-radius: var(--br-5xs);
+  background-color: var(--foundation-neutral-neutral-100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-9xs);
+  align-items: center;
+  justify-content: center;
+}
+.component941 {
+  padding: var(--padding-9xs) var(--padding-5xs);
+}
+.component94Parent,
+.frameGroup {
+  display: flex;
+  align-items: flex-start;
+}
+cityWrapper.component94Parent {
+  background-color: var(--foundation-neutral-neutral-50);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  justify-content: center;
+  gap: var(--gap-xs);
+  text-align: left;
+  color: var(--color-gray-100);
+}
+.frameGroup {
+  position: absolute;
+  top: 85px;
+  left: 32px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 32px;
+}
+.next {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.frameParent,
+.nextWrapper {
+  border: 0;
+  outline: 0;
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 0;
+}
+.nextWrapper {
+  top: 913px;
+  left: 816px;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-primary-primary-500);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+.frameParent {
+  top: 90px;
+  left: calc(50% - 466px);
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--foundation-neutral-neutral-50);
+  width: 933px;
+  height: 1003px;
+}
+.businessInfo {
+  position: relative;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: var(--foundation-neutral-neutral-500);
+}
+.businessInfoParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 120px;
+}
+.frameChild {
+  position: relative;
+  border-radius: var(--br-xl);
+  background: linear-gradient(90deg, #e46d1d, #d9b639);
+  width: 216px;
+  height: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.component104,
+.component104Inner {
+  display: flex;
+  justify-content: flex-start;
+}
+.component104Inner {
+  align-self: stretch;
+  border-radius: var(--br-xl);
+  background-color: var(--foundation-neutral-neutral-100);
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.component104 {
+  top: 20px;
+  position: absolute;
+  left: calc(50% - 467px);
+  width: 935px;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-xl);
+  color: var(--foundation-neutral-neutral-200);
+}
+.businessInfoPage {
+  position: relative;
+  background-color: #fafafa;
+  width: 100%;
+  height: 1414px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--foundation-neutral-neutral-500);
+  font-family: var(--font-poppins);
+}
+
+.horizontalList {
+  display: flex;
+  list-style-type: none;
+  gap: 12px;
+  background-color: var(--foundation-neutral-neutral-50);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 8px;
+  border-radius: var(--br-3xs);
+}
+
+.horizontalList li {
+  margin-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: var(--br-3xs);
+  cursor: pointer;
+}
+
+.horizontalList li.selected {
+  background-color: var(--foundation-primary-primary-400, #E98A4A); 
+ 
+}
+
+.component94 span {
+  margin-left: 5px;
+}
+
+
+
+
+.suggestionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+outline: none;
+  position: relative;
+  width: 100%;
+  max-height: 100px; 
+  overflow-y: auto;
+  z-index: 1;
+  background-color: var(--foundation-neutral-neutral-50);
+}
+
+.suggestionItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.suggestionItem:hover {
+  background-color: #f0f0f0;
+}

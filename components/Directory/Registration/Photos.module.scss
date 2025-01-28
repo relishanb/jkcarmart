@@ -1,0 +1,288 @@
+.image4Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 87px;
+  object-fit: cover;
+}
+
+.span {
+  color: #d92a2a;
+}
+
+.businessProfilePictureContainer,
+.enhanceYourVisibility {
+  position: relative;
+  font-weight: 500;
+}
+
+.enhanceYourVisibility {
+  align-self: stretch;
+  font-size: var(--font-size-sm);
+  color: var(--foundation-neutral-neutral-200);
+  text-align: left;
+}
+
+.businessProfilePictureParent {
+  position: absolute;
+  top: 35px;
+  left: 48px;
+  width: 468px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.showcaseYourBusiness {
+  position: relative;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--foundation-neutral-neutral-200);
+  text-align: left;
+}
+
+.servicesPhotosParent {
+  position: absolute;
+  top: 290px;
+  left: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+
+
+.phplusBold {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.phplusBoldContainer,
+.phplusBoldWrapper {
+  border-radius: var(--br-5xs);
+  background-color: var(--foundation-neutral-neutral-100);
+  width: 98px;
+  height: 98px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.phplusBoldWrapper {
+  position: absolute;
+  top: 125px;
+  left: 48px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.uploadedImage {
+  border-radius: var(--br-5xs);
+  width: 98px;
+  height: 98px;
+}
+
+.vectorIcon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+}
+
+.phplusBoldContainer {
+  flex-shrink: 0;
+  
+}
+
+.frameContainer,
+.frameGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.frameGroup {
+  position: absolute;
+  top: 359px;
+  left: 48px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: var(--gap-base);
+}
+
+.submit {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+.frameParent,
+.submitWrapper {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.submitWrapper {
+  top: 913px;
+  left: 789px;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-primary-primary-500);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.frameParent {
+  top: 90px;
+  left: calc(50% - 464px);
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--foundation-neutral-neutral-100);
+  width: 933px;
+  height: 1003px;
+}
+
+.businessInfo {
+  position: relative;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.businessInfoParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-101xl);
+}
+
+.frameChild {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-xl);
+  background: linear-gradient(90deg, #e46d1d, #d9b639);
+  height: 4px;
+  overflow: hidden;
+}
+
+.component101,
+.component101Inner {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.component101Inner {
+  align-self: stretch;
+  border-radius: var(--br-xl);
+  background-color: var(--foundation-neutral-neutral-100);
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.component101 {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 465px);
+  width: 935px;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-xl);
+}
+
+.photos {
+  position: relative;
+
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1414px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--foundation-neutral-neutral-500);
+  font-family: var(--font-poppins);
+}
+
+.backWrapper {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.backWrapper {
+  cursor: pointer;
+  text-decoration: none;
+  top: 913px;
+  left: 690px;
+  border-radius: var(--br-3xs);
+  background-color: var(--foundation-primary-primary-500);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+
+.back {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+
+.multiImages {
+
+}
+
+.selectedImagesWrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: absolute;
+  top: -8px;
+  left: 118px;
+  overflow: hidden;
+  gap: 16px;
+  padding: var(--padding-5xs);
+  cursor: pointer;
+}
+
+.selectedImage {
+  border-radius: var(--br-5xs);
+  width: 98px;
+  height: 98px;
+}
+
+.removeImage {
+  color: #019DF5;
+}

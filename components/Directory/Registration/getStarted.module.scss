@@ -1,0 +1,375 @@
+.customers {
+  background: linear-gradient(90.28deg, #e46d1d, #d9b639);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.addYourBusiness,
+.getOnlineCustomersContainer {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+
+.addYourBusiness {
+  font-size: var(--font-size-5xl);
+}
+
+.frameContainer,
+.getOnlineCustomersForYourParent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frameContainer {
+  height: 416px;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 143px 104px 8px;
+  box-sizing: border-box;
+  justify-content: center;
+  background-image: url(/frame-448@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.frameChild,
+.frameWrapper {
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.frameWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.frameChild {
+  position: relative;
+  height: 27px;
+  background: linear-gradient(135deg, #E46D1D 0%, #E5D59C 100%);
+  flex-shrink: 0;
+}
+
+.frameParent {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.gettingStartedPageChild {
+  position: absolute;
+  top: 1562px;
+  left: calc(10% + 1640px);
+  background: linear-gradient(90.03deg, #e46d1d, #e5d59c);
+  width: 1880px;
+  height: 27px;
+  overflow: hidden;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+
+.image4Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 87px;
+  object-fit: cover;
+}
+
+.getStarted {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 132.5%;
+}
+
+.getStartedWrapper {
+  position: absolute;
+  top: 908px;
+  left: calc(50% - 105px);
+  border-radius: 8px;
+  background-color: var(--foundation-primary-primary-500);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 36px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+
+.b,
+.frameItem {
+  position: absolute;
+}
+
+.b {
+  top: 19px;
+  font-family: Poppins;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 77.5%;
+  -webkit-text-stroke: 2px #6a8200;
+  color: white;
+}
+
+.frameItem {
+  top: 0;
+  left: 38px;
+  width: 108px;
+  height: 108px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.parent {
+  position: relative;
+  width: 130px;
+  height: 108px;
+}
+
+.add {
+  color: var(--foundation-neutral-neutral-400, #4A4949);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 77.5%;
+}
+
+.pictures {
+  margin: 0;
+}
+
+.addPictures {
+  position: relative;
+  font-size: var(--font-size-base);
+  text-align: center;
+  gap: 6px;
+
+}
+
+.frameParent1 {
+  position: absolute;
+  top: 502px;
+  left: 555px;
+  width: 144px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xs);
+}
+
+.frameInner {
+  position: absolute;
+  top: 1px;
+  left: 50px;
+  width: 57px;
+  height: 96px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.group {
+  position: relative;
+  width: 106px;
+  height: 101px;
+}
+
+.selectYourTimingsContainer {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 77.5%;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  width: 95px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.frameParent2 {
+  position: absolute;
+  top: 375px;
+  left: 64px;
+  width: 144px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xs);
+}
+
+.frameIcon,
+.vectorIcon {
+  position: absolute;
+  top: 276.98px;
+  left: 143.5px;
+  margin-left: 10px;
+  width: 489px;
+  height: 98.02px;
+}
+
+.frameIcon {
+  top: 0;
+  left: 43px;
+  width: 67px;
+  height: 106px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.container {
+  position: relative;
+  width: 105px;
+  height: 108px;
+}
+
+.frameParent3 {
+  position: absolute;
+  top: 119px;
+  left: 555px;
+  width: 144px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xs);
+}
+
+.frameChild1,
+.frameChild2,
+.frameChild3 {
+  position: absolute;
+  top: 71.5px;
+  left: 208px;
+  margin-left: 2px;
+  width: 418.5px;
+  height: 47.5px;
+}
+
+.frameChild2,
+.frameChild3 {
+  top: 527px;
+  left: 134.5px;
+  width: 419.5px;
+}
+
+.frameChild3 {
+  top: 0;
+  left: 14px;
+  width: 85px;
+  height: 108px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.parent1 {
+  position: relative;
+  width: 99px;
+  height: 108px;
+}
+
+.fillBusinessDetailsContainer {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 77.5%;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  width: 99px;
+
+}
+
+.frameParent4 {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  width: 144px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xs);
+}
+
+.frameDiv {
+  position: absolute;
+  top: 185px;
+  left: calc(50% - 382px);
+  border-radius: 56px;
+  background-color: var(--color-white);
+  width: 763px;
+  height: 667px;
+  font-size: var(--font-size-81xl);
+  color: var(--foundation-neutral-neutral-400);
+}
+
+.fillOutYour {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: -0.03em;
+  line-height: 132.5%;
+  font-weight: 500;
+  color: var(--foundation-neutral-neutral-300);
+  text-align: center;
+  display: inline-block;
+  width: 642px;
+}
+
+.completeYourListingInFewEParent {
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 321px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 32px;
+  color: var(--foundation-neutral-neutral-500);
+}
+
+.frameGroup {
+  position: absolute;
+  top: 415px;
+
+  background-color: rgba(240, 238, 220, 0.72);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+}
+
+.gettingStartedPage {
+  position: relative;
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 1689px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 40px;
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}

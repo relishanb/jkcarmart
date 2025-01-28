@@ -1,0 +1,11 @@
+.otp_resend_cover{
+    color: #777;
+    margin-top: 30px;
+    text-align: right;     
+}
+.otp_resend{
+    cursor: pointer;   
+}
+.otp_resend span{
+    color: var(--primary_color);
+}

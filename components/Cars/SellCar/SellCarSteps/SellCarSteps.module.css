@@ -1,0 +1,40 @@
+.tabs {   
+    display: flex;    
+    column-gap: 5px;
+    margin-bottom: 30px;
+}
+.tablinks {    
+    cursor: pointer; 
+    transition: 0.3s ease;
+    border-radius: 15px;
+    padding: 5px 10px;
+    border: 1px solid rgb(212, 212, 212); 
+}
+
+
+.achieved{
+    color: #ffffff;
+    border-color: var(--primary_color);
+    background-color: var(--primary_color);
+}
+
+.active{
+    color: var(--primary_color);
+    border-color: var(--primary_color);
+    background-color: #ffffff;
+}
+
+
+@media(max-width:767px){
+    .tabs{       
+
+        max-width: 100%;
+        overflow-x: scroll;       
+
+        .tablinks{
+            margin-bottom: 15px;            
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}

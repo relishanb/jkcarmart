@@ -1,0 +1,73 @@
+.upload_images_wrapper{
+text-align: center;
+}
+.upload_images{
+    border: 0;
+    min-width: 200px;
+    min-height: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    row-gap: 5px;
+    padding: 20px;
+    background-color: rgba(255, 223, 205, 0.50);     
+}
+.upload_images .icon{    
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: var(--primary_color);
+    padding: 10px;
+    border-radius: 50%;    
+    transition: all 1s;  
+}
+.upload_images:hover .icon{
+    background-color: var(--primary_color);
+    color: #fff;
+}
+.upload_images span{
+    color: #777;
+    font-weight: 300;
+}
+.remove_images{
+    display: none;
+}
+.uploaded_images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;    
+}
+.uploaded_images:not(.uploaded_images_empty){    
+    margin-top: 30px;
+}
+.card{
+    padding: 10px;    
+}
+.uploaded_image{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.uploaded_image_action{
+margin-top: 10px;
+}
+.uploaded_image_action button{    
+    box-shadow: none;
+    border: none;
+    font-weight: 400;
+    border-radius: 60px;
+    font-size: 12px;
+    padding: 5px 8px;
+}
+.uploaded_image_action button:first-child{    
+    margin-right: 5px;
+}
+.errors{
+    color: red;
+}

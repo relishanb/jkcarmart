@@ -1,0 +1,41 @@
+.terms_area{
+
+  font-size: 16px;
+  line-height: 30px;
+  color: #555;
+  
+  .lists{   
+
+    ol{
+      padding-left: 10px;      
+      margin: 0;
+    }
+
+    ol:not(.privacy){
+      margin: 20px 0;
+    }
+
+  li{
+    
+    font-weight: 400;
+    color: #777;
+    span{
+      display: block;
+      font-weight: 600;
+      color: var(--primary_color);
+    }
+  }
+  
+  li:not(:last-child){
+    margin-bottom: 20px;
+  }
+  
+}
+.innerList{
+  list-style: disc;
+  margin-left: 20px;
+  li:not(:last-child){
+    margin-bottom: 5px;
+  }
+}
+}

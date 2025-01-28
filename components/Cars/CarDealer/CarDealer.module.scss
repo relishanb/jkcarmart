@@ -1,0 +1,396 @@
+.overallDiv{
+    border-radius: 6px;
+    background: linear-gradient(180deg, #FFF6E5 0%, #FFF 18.61%);
+
+  }
+
+  .sec_heading{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  
+  .sec_heading h2{
+    margin-bottom: 0px;
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 132.5%;
+  }
+  
+  .sec_heading h3{
+    margin-top: 0px;
+    color: var(--foundation-neutral-neutral-300, #686666);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.5%;
+  }
+
+  .chooseType{
+    display: flex;
+    justify-content: center;
+    color: var(--foundation-neutral-neutral-300, #686666);
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 132.5%; 
+margin-bottom: 12px;
+  }
+
+  .listTypes{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+
+  
+  
+  .listType{
+    display: flex;
+  
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 12px;
+  border: 1px solid var(--foundation-neutral-neutral-200, #979696);
+  background: var(--foundation-neutral-neutral-50, #F3F3F3);
+  color: var(--foundation-neutral-neutral-300, #686666);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.5%;
+  cursor: pointer;
+
+  
+  &:hover {
+    background-color: #fff;
+    color: black;
+  }
+
+  &.selected {
+    display: flex;
+    height: 28px;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 12px;
+    border: 1px solid var(--foundation-primary-primary-500, #E46D1D);
+    background: var(--foundation-primary-primary-50, #FCF0E8);
+    color: var(--foundation-primary-primary-500, #E46D1D);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.5%;
+  cursor: pointer;
+  
+  }
+  }
+}
+
+.totalDealers{
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132.5%;
+    padding-left: 4px;
+    margin-bottom: 22px;
+ 
+}
+
+.noDealersFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: var(--foundation-neutral-neutral-500, #1D1B1B);
+    padding: 34px;
+    border: 1px solid var(--foundation-primary-primary-500, #E46D1D);
+    background: var(--foundation-primary-primary-50, #FCF0E8);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132.5%;
+   
+}
+
+.dealers_list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+    row-gap: 24px;
+
+    p{
+        margin-bottom: 0;
+    }
+
+.dealer_details{
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+
+    .card{
+        height: 100%;
+        padding: 6px;
+        background-color: #fff;
+    }
+
+   
+
+.card_body {
+    padding: 16px 16px 25px;
+}
+.dealer_image img{    
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;    
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(.7);
+    cursor: pointer;
+}
+.head_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+   
+}
+
+.address{
+    color: var(--foundation-neutral-neutral-300, #686666);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+padding-top: 2px;
+margin-bottom: 24px;
+height: 40px;
+line-height: 132.5%; 
+}
+
+
+.dealsIn{
+    color: var(--foundation-neutral-neutral-300, #686666);
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 132.5%; 
+letter-spacing: -0.42px;
+}
+
+
+
+.title{
+    
+    .name{
+        color: var(--foundation-neutral-neutral-500, #1D1B1B);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; 
+    }
+
+    .link:hover{
+cursor: pointer;
+color: var(--primary_color);
+    }
+}
+    .icons{
+        font-size: 14px;
+        
+        display: inherit;
+        
+   
+    .icon{
+        color: var(--primary_color);
+        padding: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);        
+        background-color: #fff;
+        display: inherit;
+        transition: all .8s;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &:hover{
+            background-color: var(--primary_color);
+            color: #fff;
+            transition: all .8s;
+        }
+    }
+ }
+
+.cars{
+   color: #555;
+.link{
+    display: flex;
+    align-items: center;
+}
+   svg{
+    margin-right: 5px;
+   }
+}
+
+.contact_details{
+    margin-top:15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+
+    svg{
+        margin-right: 5px;
+    }
+
+    a:hover{
+        color: var(--primary_color);
+    }
+}
+}
+
+}
+
+.link_brands{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    color: var(--foundation-neutral-neutral-300, #686666);
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+margin-bottom: 12px;
+line-height: 132.5%;
+height: 80px;
+}
+
+.contactItem{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contactItem span{
+    color: var(--foundation-neutral-neutral-300, #686666);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0px;
+    letter-spacing: -0.42px;
+}
+.location{
+    display: flex;
+    gap: 2px;
+}
+
+
+
+.button{
+    display: flex;
+padding: 8px;
+align-self: stretch;
+justify-content: center;
+align-items: center;
+border-radius: 12px;
+border: 1px solid var(--foundation-primary-primary-500, #E46D1D);
+background: var(--foundation-primary-primary-500, #E46D1D);
+margin-top: 12px;
+}
+
+.button span{
+    color: #FFF;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+cursor: pointer;
+line-height: 132.5%; 
+
+}
+
+.horizontalLine{
+    border-top: 0.5px solid var(--foundation-neutral-neutral-100, #DEDEDE);
+    margin-bottom: 12px;
+}
+
+@media (min-width: 768px){
+    .link_brands{
+        min-height: 40px;
+    }
+}
+@media (min-width: 1200px){
+    .dealers_list{
+.dealer_details {
+    width: 33.33333333333333%;
+}
+}
+}
+@media (max-width: 1199px) and (min-width:768px){
+    .dealers_list{
+    .dealer_details {
+        width: 50%;
+    }
+}
+}
+
+@media (max-width: 768px) {
+    .sec_heading {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .sec_heading h2 {
+      font-size: 28px;
+    }
+  
+    .sec_heading h3 {
+        display: flex;
+        justify-content: flex-start;
+      font-size: 14px;
+    }
+
+    .listTypes {
+       display: flex;
+       justify-content: flex-start;
+       flex-wrap: wrap;
+       gap: 8px;
+      
+      }
+    .chooseType{
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 56px;
+        font-size: 12px;
+    }
+      .listType {
+        padding: 8px 12px; 
+        font-size: 16px; 
+      }
+
+
+      .address{
+        height: auto;
+      }
+.dealsIn{
+    margin-top: -12px;
+}
+      .link_brands{
+        height: auto;
+        
+      }
+
+      .overallDiv{
+        background: linear-gradient(180deg, #faf5ee 0%, #FFF 18.61%);
+      }
+  }
