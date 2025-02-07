@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import store from '../store/index';
 
 import Integrations from './integrations/integrations';
-import { ToastContainer } from 'react-toastify';
 import BottomNavbar from '@/components/BottomNavbar/BottomNavbar';
 import ScrollToTop from '@/components/ScrollToTop';
 

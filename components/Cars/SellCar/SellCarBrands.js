@@ -32,7 +32,7 @@ function SellCarBrands() {
                 placeholder="Search Brands..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={styles.searchBox}
+                className={`${styles.searchBox}`}
             />
             {brands && (
                 <OptionsList

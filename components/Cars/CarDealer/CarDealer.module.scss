@@ -166,16 +166,19 @@ margin-bottom: 12px;
    
 }
 
-.address{
+.address {
     color: var(--foundation-neutral-neutral-300, #686666);
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-padding-top: 2px;
-margin-bottom: 24px;
-height: 40px;
-line-height: 132.5%; 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 2px;
+    margin-bottom: 24px;
+    height: 6px;
+    line-height: 132.5%;
+    display: flex;
+    align-items: center;
 }
+
 
 
 .dealsIn{
@@ -379,9 +382,9 @@ line-height: 132.5%;
       }
 
 
-      .address{
-        height: auto;
-      }
+    //   .address{
+    //     height: auto;
+    //   }
 .dealsIn{
     margin-top: -12px;
 }

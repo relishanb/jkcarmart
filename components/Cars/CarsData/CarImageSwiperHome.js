@@ -3,32 +3,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import { lightBoxActions } from "@/store/lightBox";
-import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 function CarImagesSwiperHome(props) {
-  const dispatch = useDispatch();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 576);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  function viewFullImage(image) {
-    dispatch(lightBoxActions.showLightBox({ type: "image", url: image }));
-  }
-
-  function hideFullImage() {
- 
-  }
 
   return (
     <>
@@ -54,7 +31,6 @@ function CarImagesSwiperHome(props) {
                   height: isMobile ? "150px" : "150px",
                   objectFit: isMobile ? "contain" : "cover",
                 }}
-                onClick={() => viewFullImage(item)}
               />
             </SwiperSlide>
           ))}

@@ -68,7 +68,7 @@ function SellCarInner(props) {
   const route = useRouter();
 
   const [postAd, response] = usePostAdMutation();
-  console.log("response",response);
+  console.log("response", response);
   const [uploadMultiCarImages, uploadMultiCarImagesResponse] =
     useUploadMultiCarImagesMutation();
 
@@ -76,34 +76,28 @@ function SellCarInner(props) {
     console.log("uploadMultiCarImagesResponse", uploadMultiCarImagesResponse);
   }, [uploadMultiCarImagesResponse]);
 
-  // if(props?.page=="UserPanelPostAd"){
-  //   if(response.isSuccess) props.setActiveIndex({id:"PostedAds",text:"Posted Ads"});
-  // }
-  // else{
-  //   if(response.isSuccess) route.push("/userpanel");
-  // }
   console.log("sellCarInfo", sellCarParameters.expectedPrice);
   useEffect(() => {
     console.log("post add response");
-    console.log("response",response);
+    console.log("response", response);
 
     const files = sellCarInfo.sellCarData[sellCarStepNames.Photos];
-      console.log("uploaded files", files);
-      const formData = new FormData();
+    console.log("uploaded files", files);
+    const formData = new FormData();
 
-      files &&
-        files.map((file, index) => {
-          formData.append("files", file.file);
-        });
+    files &&
+      files.map((file, index) => {
+        formData.append("files", file.file);
+      });
 
-      const payload = { carId: parseInt(response.data?.statusCode), formData: formData, files: files };
-      console.log("pyloadp",payload)
-      uploadMultiCarImages(payload);
+    const payload = { carId: parseInt(response.data?.statusCode), formData: formData, files: files };
+    console.log("pyloadp", payload)
+    uploadMultiCarImages(payload);
 
     if (props?.page == "UserPanelPostAd") {
       if (response.isSuccess)
         props.setActiveIndex({ id: "PostedAds", text: "Posted Ads" });
-    } else {      
+    } else {
       if (response.isSuccess) route.push("/userpanel");
     }
   }, [response]);
@@ -128,16 +122,11 @@ function SellCarInner(props) {
 
   const sellCarInfo = useSelector((state) => state.sellCar);
 
-  // console.log("sellCarInfo");
-  // console.log(sellCarInfo);
-
   const userId = parseInt(useSelector((state) => state.authentication.userId));
   sellCarParameters.userId = userId;
 
   const { data: userDetails } = useGetUserByUserIdQuery(userId);
-  // userDetails && console.log(userDetails);
   if (userDetails) {
-    //console.log(userDetails);
     sellCarParameters.sellerName = userDetails.firstName;
     sellCarParameters.mobileNo = userDetails.mobileNo;
   }
@@ -179,7 +168,7 @@ function SellCarInner(props) {
     }
     postAd(sellCarParameters);
   }
-  
+
   return (
     <>
       <Card className={styles.card}>
@@ -226,16 +215,16 @@ function SellCarInner(props) {
         {((isLoggedIn && sellCarInfo.activeStep == sellCarStepNames.Photos && sellCarInfo.sellCarData[sellCarStepNames.Photos].length > 0) ||
           (sellCarInfo.activeStep == sellCarStepNames.UserDetails &&
             sellCarInfo.sellCarData.UserVerified)) && (
-          <div className={styles.form_action}>
-            {/* <WhiteButton onClick={showPreviewAd}>Preview Ad</WhiteButton> */}
-            <PrimaryButton
-              className="gtmEvent_sellCar_postAd"
-              onClick={postAdd}
-            >
-              Post Ad
-            </PrimaryButton>
-          </div>
-        )}
+            <div className={styles.form_action}>
+              {/* <WhiteButton onClick={showPreviewAd}>Preview Ad</WhiteButton> */}
+              <PrimaryButton
+                className="gtmEvent_sellCar_postAd w-full"
+                onClick={postAdd}
+              >
+                Post Ad
+              </PrimaryButton>
+            </div>
+          )}
       </Card>
 
       {showModal && (

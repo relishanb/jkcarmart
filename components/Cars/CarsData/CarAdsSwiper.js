@@ -34,7 +34,7 @@ function CarAdsSwiper(props) {
     <div className="swiper-container relative">
       {/* Navigation arrows for PC view */}
       {/* {!isMobile && ( */}
-        <div className="absolute right-7 md:right-4 pb-12 md:pb-20 transform -translate-y-1/2 flex items-center space-x-2 z-10">
+        <div className="absolute right-7 md:right-4 pb-12 md:pb-20 transform -translate-y-1/2 flex items-center space-x-2 z-1">
           <button
             onClick={handlePrev}
             className="bg-gray-200 text-gray-800 p-2 rounded-full transition-colors"

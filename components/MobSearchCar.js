@@ -47,7 +47,7 @@ function MobSearchCar() {
     return (
         <>
             <DataList value={savedCarSearchValues} placeholder="Search your car" items={carBrandModelsList} onSearch={showCars} itemClass=" datalist_input_car_search_item relative" />
-            <FaSearch className='text-gray-400 absolute right-8 '/>
+            <FaSearch className='text-gray-400 absolute right-11 '/>
             {/* {savedCarSearchValues && <button className="clear_search" onClick={clearSearch}>Clear</button>} */}
         </>
     )

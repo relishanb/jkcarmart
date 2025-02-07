@@ -34,7 +34,7 @@ function viewCarDetails(){
 
   return (
     <div className={`${styles.ad_details} ${props.width=="Full"?styles.full_width:""}`}>
-      <Card className={`${styles.ad_details_card} ${props.carInfo.isSold?styles.ad_details_card_sold:""}`}>
+      <Card className={`border shadow-lg ${styles.ad_details_card} ${props.carInfo.isSold?styles.ad_details_card_sold:""}`}>
 
       {props.carInfo.isSold && <><div className={styles.sold_overlay}></div> <div className={styles.sold}>SOLD</div></>}
 
@@ -49,7 +49,6 @@ function viewCarDetails(){
           {props.carInfo.totalViews > 0 ? props.carInfo.totalViews : 0}
         </div>   
       
-
        { <CarImagesSwiperHome images={props.carInfo.carImagesList} carId={props.carInfo.carId} onImageClick="ViewCarDetails" viewCarDetails={viewCarDetails} />}
         </div>
 

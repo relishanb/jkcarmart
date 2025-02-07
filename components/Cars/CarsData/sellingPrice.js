@@ -21,7 +21,7 @@ function SellingPrice(props) {
 
   const closeModal = () => {
     setShowModal(false)
-  
+
   };
 
   const numDifferentiation = (val) => {
@@ -39,7 +39,7 @@ function SellingPrice(props) {
     <div className={styles.card_body}>
       {/* Selling Price Section */}
       {/* desktop */}
-      <div className="justify-between items-center px-4 py-2 border border-gray-200 rounded-md mb-2 hidden md:flex">
+      <div className="justify-between items-center px-4 py-2 border border-gray-200  bg-white rounded-md mb-2 hidden md:flex">
         <div>
           <span className={styles.sellingPrice}>Selling Price</span>
           <div className={styles.ad_price}>
@@ -49,44 +49,44 @@ function SellingPrice(props) {
         </div>
         <button
           onClick={() => setShowEMIModal(true)}
-          className="text-orange-500 hover:text-white hover:bg-orange-500 p-2 hover:p-2 hover:rounded-lg cursor-pointer"
+          className="text-white bg-orange-500 p-2 rounded-lg cursor-pointer"
         >
           Calculate EMI
         </button>
       </div>
 
-    {/* mobile */}
-    <div className="flex justify-between items-center gap-4 px-4 py-6 border border-gray-200 rounded-md mb-6 w-full max-w-full md:hidden bg-white">
-  <div>
-    <span className="text-gray-500 font-semibold text-sm">Selling Price</span>
-    <div className="w-full">
-      <h3 className="text-2xl font-bold whitespace-nowrap">₹{expectedPrice}</h3>
-    </div>
-  </div>
-  <button
-    onClick={() => setShowEMIModal(true)}
-    className="whitespace-nowrap text-orange-500 hover:text-white hover:bg-orange-500 px-4 py-2 rounded-lg cursor-pointer transition-all duration-300"
-  >
-    Calculate EMI
-  </button>
-</div>
+      {/* mobile */}
+      <div className="flex justify-between items-center gap-4 px-4 py-6 border border-gray-200 rounded-md mb-6 w-full max-w-full md:hidden bg-white">
+        <div>
+          <span className="text-gray-500 font-semibold text-sm">Selling Price</span>
+          <div className="w-full">
+            <h3 className="text-2xl font-bold whitespace-nowrap">₹{expectedPrice}</h3>
+          </div>
+        </div>
+        <button
+          onClick={() => setShowEMIModal(true)}
+          className="whitespace-nowrap text-white bg-orange-500 px-4 py-2 rounded-lg cursor-pointer transition-all duration-300"
+        >
+          Calculate EMI
+        </button>
+      </div>
 
 
       {/* Contact Seller Section */}
-      <div className={`${styles.contactContainer} flex flex-col items-center gap-3 p-4 border border-gray-200 rounded-md `}>
-  {!showContactInfo && (
-    <button
-      className={`view_car_seller_details ${styles.contactSeller} bg-orange-500 text-white w-full rounded-md py-2`}
-      onClick={() => handleContactSellerClick(props.carInfo.user_ID)}
-    >
-      Contact Seller
-    </button>
-  )}
-  <div className={styles.EyeIconCont}>
-    <span className={styles.EyeIcon}><EyeIconJK /></span>
-    <span className={styles.EyeIconText}>{props.carInfo.totalViews} people are interested</span>
-  </div>
-</div>
+      <div className={`${styles.contactContainer} flex flex-col items-center gap-3 p-4 border bg-white border-gray-200 rounded-md `}>
+        {!showContactInfo && (
+          <button
+            className={`view_car_seller_details ${styles.contactSeller} bg-orange-500 text-white w-full rounded-md py-2`}
+            onClick={() => handleContactSellerClick(props.carInfo.user_ID)}
+          >
+            Contact Seller
+          </button>
+        )}
+        <div className={styles.EyeIconCont}>
+          <span className={styles.EyeIcon}><EyeIconJK /></span>
+          <span className={styles.EyeIconText}>{props.carInfo.totalViews} people are interested</span>
+        </div>
+      </div>
 
 
       {/* Modal for Contact Info */}
@@ -106,17 +106,21 @@ function SellingPrice(props) {
       {showEMIModal && (
         <div className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-75" onClick={() => setShowEMIModal(false)}>
           <div className="p-6 rounded-lg max-w-full" onClick={(e) => e.stopPropagation()}>
-            <EmiCalculatorTwo setShowModal={setShowModal} showModal={showModal} defaultLoanAmount={props.carInfo.expectedPrice}/>
-        </div>
+            <EmiCalculatorTwo setShowModal={setShowModal} showModal={showModal} defaultLoanAmount={props.carInfo.expectedPrice} />
           </div>
+        </div>
       )}
 
       {/* Check Eligibility Section */}
 
       {/* Eligibility Form Modal */}
       {showModal && (
-        <EligibilityForm closeModal={closeModal} />
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black bg-opacity-50">
+          <EligibilityForm closeModal={closeModal} />
+
+        </div>
       )}
+
     </div>
   );
 }

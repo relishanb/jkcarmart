@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "13.1.6",
     "@reduxjs/toolkit": "^1.9.3",
+    "clsx": "^2.1.1",
     "cookies-next": "^4.0.0",
     "flatpickr": "^4.6.13",
     "next": "13.1.6",
@@ -39,6 +40,7 @@
     "redux": "^4.2.1",
     "saas": "^1.0.0",
     "sass": "^1.58.0",
+    "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.9.0",
     "swiper": "^9.0.2",

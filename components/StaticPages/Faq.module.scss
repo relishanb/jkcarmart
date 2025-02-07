@@ -2,9 +2,8 @@
 .accordion .accordion_item {
   background: #fff;
   border-bottom: 1px solid #eee;
-  // box-shadow: 0 3px 10px 0 rgb(38 59 94 / 10%);
-  // margin-bottom: 20px;
-  padding: 0px 15px;
+  padding: 0px 8px;
+  
 }
 
 
@@ -34,7 +33,6 @@
 
   .accordion button .accordion_title {
       padding: 1em 1.5em 1em 0;
-
   }
 
   .accordion button .icon {
@@ -42,7 +40,7 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      top: 18px;
+      top: 28px;
       right: 0;
       width: 22px;
       height: 22px;

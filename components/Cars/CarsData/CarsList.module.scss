@@ -7,12 +7,12 @@
     row-gap:24px;
 }
 .list_header{
-    display: flex;
+    display: fixed;
     justify-content: space-between;    
 }
 .ad_list_title {
     font-size:16px;
-    margin-top:0;
+    margin-top:10;
     margin-bottom:20px;
 
     span:first-child{

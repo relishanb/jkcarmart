@@ -8,27 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authenticationActions } from '@/store/authentication';
 
 const BottomNavbar = () => {
-  const router = useRouter(); 
-  const isLoggedIn = useSelector(state=>state.authentication.isLoggedIn);
+  const router = useRouter();
+  const isLoggedIn = useSelector(state => state.authentication.isLoggedIn);
+  const dispatch = useDispatch();
 
-  const dispatch=useDispatch();
-
-  const checkAuthentication=()=>{
-    {isLoggedIn ? (
-      <Link href="/account">
-      </Link>
-      ):(
-        
-        dispatch(authenticationActions.toggleAuthenticationModel(true))
-        
-        
-      )
+  const checkAuthentication = () => {
+    if (isLoggedIn) {
+      router.push("/userpanel"); 
+    } else {
+      dispatch(authenticationActions.toggleAuthenticationModel(true));
     }
-  }
-
-  const toggleAuthenticationModel = (status) => {
-    dispatch(authenticationActions.toggleAuthenticationModel(status === "open"));
-    console.log(authentication)
   };
 
   return (
@@ -52,18 +41,16 @@ const BottomNavbar = () => {
       {/* Sell */}
       <Link href="/sell">
         <div className="flex flex-col items-center text-gray-500">
-          <VscKey size={22} className={`${router.pathname === "/sell" ? "text-orange-500" : ""} rotate-45`}/>
+          <VscKey size={22} className={`${router.pathname === "/sell" ? "text-orange-500" : ""} rotate-45`} />
           <span className={router.pathname === "/sell" ? "text-orange-500 text-sm font-medium" : "text-sm"}>Sell</span>
         </div>
       </Link>
 
       {/* Account */}
-      <Link href="/userpanel">
       <div className="flex flex-col items-center text-gray-500 cursor-pointer" onClick={checkAuthentication}>
         <BiUser size={22} className={router.pathname === "/userpanel" ? "text-orange-500" : ""} />
         <span className={router.pathname === "/userpanel" ? "text-orange-500 text-sm font-medium" : "text-sm"}>Account</span>
       </div>
-      </Link>
     </nav>
   );
 };

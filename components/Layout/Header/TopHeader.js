@@ -5,7 +5,6 @@ import { FaBars, FaSearch, FaMapMarkerAlt, FaRegTimesCircle, FaShareAlt } from "
 import { IoArrowBack, IoLogoApple, IoLogoGooglePlaystore, IoShareSocial } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { authenticationActions } from "@/store/authentication";
-import { isIOS, isAndroid, isMobile } from "react-device-detect";
 
 import SearchBoxCars from "./SearchBoxCars";
 import SearchBoxLocations from "./SearchBoxLocations";
@@ -14,11 +13,19 @@ import { MobileMenu } from "./MobileMenu";
 import LoginModal from "@/components/UI/LoginModal";
 import Login from "@/components/Login/Login";
 import Button from "@/components/UI/Button";
+import { AppDownload } from "@/components/UI/UIcomponents/AppDownload";
+import { useGetAdDetailsByCarIdQuery } from "@/store/apiServices/apiServices";
+import { WhatsappShareButton } from "next-share";
+import useScreenType from "@/hooks/useScreenType";
 
 function TopHeader() {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const isMobile=useScreenType();
+  
+  const { data: carDetails, status } = useGetAdDetailsByCarIdQuery(router.query.id);
+  console.log("cardetails",carDetails);
   const authentication = useSelector((state) => state.authentication);
   const totalShortlistedCars = useSelector(
     (state) => state.userInterestedCars.shortlistedCars.length
@@ -52,32 +59,43 @@ function TopHeader() {
     if (router.pathname === "/") {
       return (
         <div className="search_bar md:hidden max-w-screen-md flex mt-2 md:mt-0 z-55">
-              <SearchBoxCars />
-              <i className="absolute top-4 right-4">
-                <FaSearch className="text-gray-400" />
-              </i>
-            </div>
+          <SearchBoxCars />
+          <i className="absolute top-4 right-4">
+            <FaSearch className="text-gray-400" />
+          </i>
+        </div>
       );
     }
     return null;
   };
 
+  const FormatCurrency = (value) => {
+    if (!value) return '';
+    return `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  };
+
+  const price=FormatCurrency(carDetails?.expectedPrice);
+  const driven=FormatCurrency(carDetails?.totalDriven);
   const renderConditionalButton = () => {
     if (/^\/car\/details\/\d+$/.test(router.asPath)) {
-      // Show Share Icon on /car/details/:id
+
       return (
         <div className="md:hidden flex items-center pr-1 justify-center cursor-pointer">
-          <IoShareSocial size={25} />
+          <WhatsappShareButton
+            url={`https://www.jkcarmart.com/car/details/${carDetails.car_ID}`}
+            title={`${carDetails.brandName} ${carDetails.modelName} | ${carDetails.modelYear} | ${driven}kms | ₹${price}`}
+            separator=" : "
+          >
+            <IoShareSocial size={25} id="social_share_car_whatsapp" />
+          </WhatsappShareButton>
         </div>
       );
-    } else if (router.pathname === "/buy" ) {
-      // Show Heart Icon on /buy
+    } else if (router.pathname === "/buy") {
       return (
         <div
           title="Shortlisted Cars"
-          className={`md:hover:bg-[#ffceb6] md:bg-neutral-100 md:rounded-full md:p-2 rounded-full cursor-pointer flex items-center justify-center pr-1 md:transition md:duration-500 ${
-            totalShortlistedCars > 0 ? "active" : ""
-          }`}
+          className={`md:hover:bg-[#ffceb6] md:bg-neutral-100 md:rounded-full md:p-2 rounded-full cursor-pointer flex md:hidden items-center justify-center pr-1 md:transition md:duration-500 ${totalShortlistedCars > 0 ? "active" : ""
+            }`}
         >
           <Link
             id="Cars_Shortlisted"
@@ -97,20 +115,15 @@ function TopHeader() {
       );
     }
 
-    // Default: Show Get the App Button
     return (
-      <Button className="flex md:hidden justify-center gap-1 px-1 items-center w-full text-center bg-orange-500 text-white text-md font-small py-1 rounded-xl">
-        {isAndroid && <IoLogoGooglePlaystore size={20} />}
-        {isIOS && <IoLogoApple color="white" size={20} />}
-        <span className="text-white">Get the App</span>
-      </Button>
+      <AppDownload />
     );
   };
 
   return (
     <>
       {/* Main Header */}
-      <div className="main_header relative z-10">
+      <div className=" bg-white py-4 relative">
         <div className="container">
           <div className="toggle cursor-pointer">
             {showBackArrow ? (
@@ -120,18 +133,27 @@ function TopHeader() {
             )}
           </div>
 
-          <div className="col nav_container flex items-center justify-between pt-2 md:pt-0">
+          <div className="col flex justify-between items-center pt-2 md:pt-0">
             <div className="logo">
               <Link href="/">
                 <img src="/logo.png" width="150" alt="Logo" />
               </Link>
             </div>
 
-            <div className="search_bar hidden md:flex mt-2 md:mt-0 z-55">
-              <i className="icon">
-                <FaSearch color="black" />
-              </i>
-              <SearchBoxCars />
+            <div className="flex gap-8">
+              <div className="search_bar hidden md:flex mt-2 md:mt-0 z-55">
+                <i className="icon">
+                  <FaSearch />
+                </i>
+                <SearchBoxCars />
+              </div>
+
+              {!isMobile &&
+                <div className="location menu">
+                  <i className="icon"><FaMapMarkerAlt /></i>
+                  <SearchBoxLocations />
+                </div>
+              }
             </div>
 
             {homeScreenSearch()}
@@ -141,26 +163,25 @@ function TopHeader() {
               <div className="mt-1">{renderConditionalButton()}</div>
 
               <div
-          title="Shortlisted Cars"
-          className={`md:hover:bg-[#ffceb6] md:bg-neutral-100 md:rounded-full md:p-2 rounded-full cursor-pointer hidden md:flex items-center justify-center pr-1 md:transition md:duration-500 ${
-            totalShortlistedCars > 0 ? "active" : ""
-          }`}
-        >
-          <Link
-            id="Cars_Shortlisted"
-            className="user_activity_link cars_shortlisted_link"
-            href={totalShortlistedCars > 0 ? "/car/shortlisted" : "/car/shortlisted"}
-          >
-            {totalShortlistedCars > 0 && (
-              <span className="absolute top-0 md:top-1 right-0 md:right-60 bg-orange-500 text-white rounded-xl px-1 text-xs">
-                {totalShortlistedCars}
-              </span>
-            )}
-            <i className="icon">
-              <HeaderHeartIcon />
-            </i>
-          </Link>
-        </div>
+                title="Shortlisted Cars"
+                className={`md:hover:bg-[#ffceb6] md:bg-neutral-100 md:rounded-full md:p-2 rounded-full cursor-pointer hidden md:flex items-center justify-center pr-1 md:transition md:duration-500 ${totalShortlistedCars > 0 ? "active" : ""
+                  }`}
+              >
+                <Link
+                  id="Cars_Shortlisted"
+                  className="user_activity_link cars_shortlisted_link"
+                  href={totalShortlistedCars > 0 ? "/car/shortlisted" : "/car/shortlisted"}
+                >
+                  {totalShortlistedCars > 0 && (
+                    <span className="absolute top-0 md:top-1 right-0 md:right-60 bg-orange-500 text-white rounded-xl px-1 text-xs">
+                      {totalShortlistedCars}
+                    </span>
+                  )}
+                  <i className="icon">
+                    <HeaderHeartIcon />
+                  </i>
+                </Link>
+              </div>
 
               {/* Login / Profile */}
               {!authentication.isLoggedIn ? (

@@ -401,12 +401,6 @@ header {
   width: 130px;
 }
 
-.nav_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
- 
-}
 .secondary_header{
   background-color: #E46D1D;
 }
@@ -498,7 +492,7 @@ header {
           font-size: 14px;
           color: #ccc;
           position: absolute;
-          top: 15px;
+          top: 17px;
           left: 24px;
           z-index: 1;
           }
@@ -825,7 +819,7 @@ input[type=search]:focus-visible {
     font-size: 14px;   
     color: #ccc;
     position: absolute;
-    top: 15px;
+    top: 17px;
     left: 24px;
     z-index: 1;
   }
@@ -2381,6 +2375,7 @@ background: var(--foundation-primary-primary-500, #E46D1D);
   }
   .footer_bottom_cont{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     

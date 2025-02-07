@@ -1,4 +1,4 @@
-import { useState,useEffect, useRef  } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "@/components/UI/Button";
 import { FaFilter } from "react-icons/fa";
 
@@ -14,10 +14,10 @@ import CarFilterBySeats from "../CarFilterBySeats";
 import CarFilterByColors from "../CarFilterByColors";
 import MultiFilters from "../MultiFilters/MultiFilters";
 
-import {FaUndo} from "react-icons/fa";
+import { FaUndo } from "react-icons/fa";
 
-import { useDispatch,useSelector } from 'react-redux';
-import { filterActions,filterNames } from '../../../../store/filters';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterActions, filterNames } from '../../../../store/filters';
 
 
 import styles from "./CarFilters.module.scss";
@@ -38,56 +38,56 @@ function CarFilters() {
     { text: "Colors", value: filterNames.Color },
   ];
 
-  const [mobileFilterActive,setMobileFilterActive] = useState(false);
-  function toogleMobileFilter(){
+  const [mobileFilterActive, setMobileFilterActive] = useState(false);
+  function toogleMobileFilter() {
     setMobileFilterActive(!mobileFilterActive);
   }
 
 
   const dispatch = useDispatch();
 
-  
- 
+
+
   useEffect(() => {
     dispatch(filterActions.fillFilterData());
   }, [dispatch]);
 
-  const savedFilters = useSelector((state)=>state.filter.storedFilterData);
+  const savedFilters = useSelector((state) => state.filter.storedFilterData);
 
 
 
-useEffect(() => {
-  const savedFilterData = JSON.parse(localStorage.getItem('filterData') || '[]');
+  useEffect(() => {
+    const savedFilterData = JSON.parse(localStorage.getItem('filterData') || '[]');
 
-  if (savedFilterData.length > 0) {
-    dispatch(filterActions.fillStoredFilterData(savedFilterData));
-  } else {
-    dispatch(filterActions.fillFilterData());
-  }
-}, [dispatch]);
+    if (savedFilterData.length > 0) {
+      dispatch(filterActions.fillStoredFilterData(savedFilterData));
+    } else {
+      dispatch(filterActions.fillFilterData());
+    }
+  }, [dispatch]);
 
 
   const selectedFiltersCount = useSelector((state) => state.filter.selectedFiltersCount);
 
 
   let filterKeys = [];
-  let i=0;
-  savedFilters.map((el,index)=>{
-    if(el[Object.keys(el)[0]].length > 0) {
+  let i = 0;
+  savedFilters.map((el, index) => {
+    if (el[Object.keys(el)[0]].length > 0) {
       filterKeys[i] = Object.keys(el)[0];
       i++;
     };
   });
   filterKeys = [filterKeys];
 
-function clearAllFilters(){
-  dispatch(filterActions.clearAllFilters()); 
-  localStorage.removeItem('carFilters');
-}
+  function clearAllFilters() {
+    dispatch(filterActions.clearAllFilters());
+    localStorage.removeItem('carFilters');
+  }
 
-useEffect(() => {
-  localStorage.setItem('carFilters', JSON.stringify(savedFilters));
-}, [savedFilters]);
+  useEffect(() => {
+    localStorage.setItem('carFilters', JSON.stringify(savedFilters));
+  }, [savedFilters]);
 
 
   return (
@@ -96,32 +96,32 @@ useEffect(() => {
 
       <div className={styles.car_filters}>
 
-  <div className={styles.car_filters_header}>
-  <h3>Filters</h3>  
-  {filterKeys[0].length > 0 && 
-  <span onClick={clearAllFilters}><FaUndo /> reset all</span>
-  }
-    </div>    
+        <div className={styles.car_filters_header}>
+          <h3>Filters</h3>
+          {filterKeys[0].length > 0 &&
+            <span onClick={clearAllFilters}><FaUndo /> reset all</span>
+          }
+        </div>
 
 
-    
 
-<CarFilterByPriceInner filterActive={filterKeys[0].includes(filterNames.Price)} />
-<CarFilterByMileageInner filterActive={filterKeys[0].includes(filterNames.Mileage)}/>
-<CarFilterByRegistrationYearInner filterActive={filterKeys[0].includes(filterNames.RegistrationYear)}/>
-<CarFilterByBrandInner filterActive={filterKeys[0].includes(filterNames.Brand)}/>
-<CarFilterByFuelTypeInner filterActive={filterKeys[0].includes(filterNames.FuelType)}/>
-<CarFilterByOwnerTypeInner filterActive={filterKeys[0].includes(filterNames.OwnerType)}/>
-<CarFilterByBodyType filterActive={filterKeys[0].includes(filterNames.BodyType)}/>
-<CarFilterByTransmission filterActive={filterKeys[0].includes(filterNames.Transmission)}/>
-<CarFilterBySeats filterActive={filterKeys[0].includes(filterNames.Seats)}/>
-<CarFilterByColors filterActive={filterKeys[0].includes(filterNames.Color)}/>
+
+        <CarFilterByPriceInner filterActive={filterKeys[0].includes(filterNames.Price)} />
+        <CarFilterByMileageInner filterActive={filterKeys[0].includes(filterNames.Mileage)} />
+        <CarFilterByRegistrationYearInner filterActive={filterKeys[0].includes(filterNames.RegistrationYear)} />
+        <CarFilterByBrandInner filterActive={filterKeys[0].includes(filterNames.Brand)} />
+        <CarFilterByFuelTypeInner filterActive={filterKeys[0].includes(filterNames.FuelType)} />
+        <CarFilterByOwnerTypeInner filterActive={filterKeys[0].includes(filterNames.OwnerType)} />
+        <CarFilterByBodyType filterActive={filterKeys[0].includes(filterNames.BodyType)} />
+        <CarFilterByTransmission filterActive={filterKeys[0].includes(filterNames.Transmission)} />
+        <CarFilterBySeats filterActive={filterKeys[0].includes(filterNames.Seats)} />
+        <CarFilterByColors filterActive={filterKeys[0].includes(filterNames.Color)} />
 
       </div>
 
 
 
-      {mobileFilterActive  && <MultiFilters toogleMobileFilter={toogleMobileFilter} />}
+      {mobileFilterActive && <MultiFilters toogleMobileFilter={toogleMobileFilter} />}
 
       <div className={styles.car_filters_mobile}>
         <div className={styles.car_filters_header}>
@@ -160,7 +160,7 @@ useEffect(() => {
 
 
 
-      </>
+    </>
 
   );
 }

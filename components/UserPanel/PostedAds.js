@@ -23,7 +23,6 @@ const PostedAds = (props) => {
 
   const [postedAdsTabActive, setPostedAdsTabActive] = useState("All");
   const [postedAdsTabsDropdown, setPostedAdsTabsDropdown] = useState(false);
-  const [postedAdStatusDropdown, setPostedAdStatusDropdown] = useState(null);
 
   let userId = useSelector(state => state.authentication.userId);
   userId = parseInt(userId);
@@ -38,20 +37,6 @@ const PostedAds = (props) => {
   } else if (postedAdsTabActive === "Approved") {
     UserCars = cars.filter(({ postedCarStatus }) => postedCarStatus === "Approved");
   }
-
-  const customStyles = {
-    control: (base) => ({
-      ...base,
-      background: "#f0f0f0",
-      borderRadius: "10px",
-      border: "0",
-      "&:hover": {
-        borderColor: "blue"
-      }
-    })
-  };
-
-  const [selectedOption, setSelectedOption] = useState(null);
 
   return (
     <div className={styles.ads_list}>

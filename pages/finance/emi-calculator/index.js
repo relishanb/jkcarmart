@@ -53,8 +53,12 @@ function EmiCalculatorPage() {
         </div>
       </div>
       {showModal && (
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black bg-opacity-50">
               <EligibilityForm closeModal={closeModal} />
+            
+              </div>
             )}
+            
         {/* <EmiAbout/>
         <EmiCalculatorSteps/> */}
   </LayoutBuy>

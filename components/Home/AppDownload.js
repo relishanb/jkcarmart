@@ -37,12 +37,12 @@ export const AppDownload = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"
-            >
+          >
             <img
               src="/play-store.svg"
               alt="Play Store Link"
               className="w-28 h-8"
-              />
+            />
           </Link>
         </div>
       </div>

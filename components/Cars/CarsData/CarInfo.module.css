@@ -27,7 +27,7 @@ background: #E34242;
 position: absolute;
 top: 5px;
 left: -60px;
-z-index: 99;
+z-index: 1;
 color: #FFF;
 font-size: 20px;
 font-weight: 700;

@@ -137,7 +137,7 @@ export const jsonServerApi = createApi({
         method: 'POST',
         body: payload.formData,            
       }),      
-      invalidatesTags: ['updateAd'],
+      invalidatesTags: ['updateAd','updateAdViews'],
     }),
 
     uploadMultiCarImages: builder.mutation({
