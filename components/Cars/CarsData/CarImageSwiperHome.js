@@ -9,7 +9,7 @@ function CarImagesSwiperHome(props) {
 
   return (
     <>
-      <div className="swiper-container">
+      <div className="border rounded-xl ">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -28,8 +28,8 @@ function CarImagesSwiperHome(props) {
                 alt={`Car Image ${index}`}
                 style={{
                   width:"100%",
-                  height: isMobile ? "150px" : "150px",
-                  objectFit: isMobile ? "contain" : "cover",
+                  height: isMobile ? "250px" : "150px",
+                  objectFit: isMobile ? "cover" : "cover",
                 }}
               />
             </SwiperSlide>

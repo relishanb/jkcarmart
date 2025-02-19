@@ -34,7 +34,7 @@ data?.map(item=>locations.push({id:item.districtId,value:item.districtName}))
 return(
   <>
     <DataList value={location} placeholder="Select Location" items={locations} onSearch={showCars} itemClass="datalist_input_location_search_item" />
-    {location && <button className="clear_search" onClick={clearSearch}>Clear</button>}
+    {location && <button className="clear_search mt-1" onClick={clearSearch}>Clear</button>}
     </>
 )
 }

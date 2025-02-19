@@ -9,7 +9,7 @@ return(
           items={props.items}    
           value={props.value?props.value:""}    
           listboxOptionProps={{className:props.itemClass}}
-          
+          className='py-1'
         />
 )
 }

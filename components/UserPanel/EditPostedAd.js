@@ -256,7 +256,7 @@ const EditPostedAd = (props) => {
                 <div className={styles.select_wrapper}>
                   <label className="font-semibold text-sm">Mileage</label>
                   <input
-                    className={`${styles.input_field} px-3 py-2`}
+                    className={`${styles.input_field} px-3 py-1.5`}
                     type="number"
                     placeholder="Mileage"
                     value={EditCarData.Mileage[0]?.value || ""}

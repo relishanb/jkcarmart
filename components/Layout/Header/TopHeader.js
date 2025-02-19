@@ -18,6 +18,8 @@ import { useGetAdDetailsByCarIdQuery } from "@/store/apiServices/apiServices";
 import { WhatsappShareButton } from "next-share";
 import useScreenType from "@/hooks/useScreenType";
 
+import Drawer from 'react-modern-drawer';
+
 function TopHeader() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -34,6 +36,8 @@ function TopHeader() {
   const [showBackArrow, setShowBackArrow] = useState(false);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const [locationSearchActive, setLocationSearchActive] = useState(false);
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
     setShowBackArrow(
@@ -55,19 +59,19 @@ function TopHeader() {
   };
 
 
-  const homeScreenSearch = () => {
-    if (router.pathname === "/") {
-      return (
-        <div className="search_bar md:hidden max-w-screen-md flex mt-2 md:mt-0 z-55">
-          <SearchBoxCars />
-          <i className="absolute top-4 right-4">
-            <FaSearch className="text-gray-400" />
-          </i>
-        </div>
-      );
-    }
-    return null;
-  };
+  // const homeScreenSearch = () => {
+  //   if (router.pathname === "/") {
+  //     return (
+  //       <div className="search_bar md:hidden max-w-screen-md flex mt-2 md:mt-0 z-55">
+  //         <SearchBoxCars />
+  //         <i className="absolute top-4 right-4">
+  //           <FaSearch className="text-gray-400" />
+  //         </i>
+  //       </div>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   const FormatCurrency = (value) => {
     if (!value) return '';
@@ -129,7 +133,7 @@ function TopHeader() {
             {showBackArrow ? (
               <IoArrowBack size={34} color="black" className="p-1" onClick={() => router.back()} />
             ) : (
-              <FaBars size={34} className="p-1" onClick={() => setIsSidebarActive(true)} />
+              <FaBars size={34} className="p-1" onClick={() => setIsDrawerOpen(true)} />
             )}
           </div>
 
@@ -142,7 +146,7 @@ function TopHeader() {
 
             <div className="flex gap-8">
               <div className="search_bar hidden md:flex mt-2 md:mt-0 z-55">
-                <i className="icon">
+                <i className="icon mt-1">
                   <FaSearch />
                 </i>
                 <SearchBoxCars />
@@ -150,13 +154,13 @@ function TopHeader() {
 
               {!isMobile &&
                 <div className="location menu">
-                  <i className="icon"><FaMapMarkerAlt /></i>
+                  <i className="icon mt-1"><FaMapMarkerAlt /></i>
                   <SearchBoxLocations />
                 </div>
               }
             </div>
 
-            {homeScreenSearch()}
+            {/* {homeScreenSearch()} */}
 
             <div className="myaccount flex items-center space-x-4 relative z-10">
               {/* Conditional Button */}
@@ -238,8 +242,32 @@ function TopHeader() {
         <SearchBoxCars />
       </div>
 
+      <Drawer
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        direction="left"
+        className="sidebar"
+      >
+        <div className="p-4">
+          <button onClick={() => setIsDrawerOpen(false)} className="close-button">
+            <FaRegTimesCircle size={24} />
+          </button>
+          
+          {/* Rendering MobileMenu inside the drawer */}
+          <MobileMenu
+            isSidebarActive={isDrawerOpen}
+            setIsSidebarActive={setIsDrawerOpen}
+            toggleSidebar={() => setIsDrawerOpen(!isDrawerOpen)}
+            toggleAuthenticationModel={toggleAuthenticationModel}
+            authentication={authentication}
+            authenticationActions={authenticationActions}
+            dispatch={dispatch}
+          />
+        </div>
+      </Drawer>
+
       {/* Mobile Sidebar Menu */}
-      <MobileMenu
+      {/* <MobileMenu
         isSidebarActive={isSidebarActive}
         setIsSidebarActive={setIsSidebarActive}
         toggleSidebar={toggleSidebar}
@@ -247,7 +275,7 @@ function TopHeader() {
         authentication={authentication}
         authenticationActions={authenticationActions}
         dispatch={dispatch}
-      />
+      /> */}
 
       {/* Login Modal */}
       {authentication.isAuthenticationModelActive && (

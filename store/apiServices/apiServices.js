@@ -207,6 +207,13 @@ export const jsonServerApi = createApi({
         method: 'POST',
         body: payload,
       })
+    }),
+    postRequiredCar:builder.mutation({
+      query: (payload) => ({
+        url: 'jkcm/users/BuyerRequiredCarInfo',
+        method: 'POST',
+        body: payload,
+      })
     })
 
   }),
@@ -244,6 +251,7 @@ export const {
   useDeleteBusinessImageMutation,
 
   usePostDataMutation,
+  usePostRequiredCarMutation,
 
   util: { getRunningQueriesThunk },  
 } = jsonServerApi;

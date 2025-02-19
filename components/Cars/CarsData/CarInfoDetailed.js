@@ -1,3 +1,4 @@
+
 import {
     WhatsappShareButton,
     WhatsappIcon,
@@ -22,6 +23,8 @@ import Modal from '@/components/UI/UIcomponents/Modal';
 import LoanEligibility from './LoanEligibility';
 import AddSideSection from './AddSideSection';
 import { IoShareSocialOutline } from 'react-icons/io5';
+import ViewSimilarCars from '@/components/ViewSimilarCars';
+import { authenticationActions } from '@/store/authentication';
 
 function CarInfoDetailed(props) {
 
@@ -33,8 +36,10 @@ function CarInfoDetailed(props) {
 
     const shortlistedCars = useSelector(state => state.userInterestedCars.shortlistedCars);
     const comparedCars = useSelector(state => state.userInterestedCars.comparedCars);
+    const isLoggedIn = useSelector(state => state.authentication.isLoggedIn);
 
     const dispatch = useDispatch();
+    
 
     function toggleShortlistedCars(e, carId) {
         (shortlistedCars.length > 19 && !shortlistedCars.includes(carId)) ? alert("You can shortlist only 20 cars at a time") : dispatch(userInterestedCarsActions.toggleShortlistedCars(carId));
@@ -132,11 +137,18 @@ function CarInfoDetailed(props) {
         handleCloseEligibilityModal();
     };
 
+    const checkAuthentication = () => {
+        if (isLoggedIn) {
+            setShowContactModal(true);
+        } else {
+            dispatch(authenticationActions.toggleAuthenticationModel(true));
+        }
+    };
 
     return (
         status == "fulfilled" && carInfo && allSimilarCars &&
         <div className={styles.carDetailedPage}>
-            <section className="first_section mt-32">
+            <section className="first_section mt-20">
                 <div className="container">
                     <div className={styles.car_details}>
                         <div className="row">
@@ -152,7 +164,7 @@ function CarInfoDetailed(props) {
                                 <div className={styles.carDetails}>
 
                                     {/* Right side car details section mobile view*/}
-                                    <div className={`${styles.card1} ${styles.seller_details} ${styles.hide_desktop} relative`}>
+                                    <div className={`${styles.card1} ${styles.seller_details} ${styles.hide_desktop} relative pt-72 `}>
                                         <div className="flex flex-col">
                                             {/* 1st line */}
                                             <div className="flex flex-wrap items-center space-x-2 text-lg">
@@ -334,7 +346,7 @@ function CarInfoDetailed(props) {
                                     </div>
                                 </div>
                                 <span className={styles.hide_mobile}>
-                                    <SellingPrice carInfo={carInfo} />
+                                    <SellingPrice isLoggedIn={isLoggedIn} carInfo={carInfo} />
                                 </span>
                                 <LoanEligibility carId={carInfo.carId} />
                                 {/* <AddSideSection/> */}
@@ -345,20 +357,7 @@ function CarInfoDetailed(props) {
             </section>
 
             {/* View similar cars section */}
-            <section className="similar_Cars">
-                <div className={styles.similarCars}>
-                    <div className="container">
-                        <div className="sec-heading">
-                            <h2 className='font-bold text-md md:pb-5'>View Similar Cars</h2>
-                        </div>
-                        <CarAdsSwiper carAdsList={allSimilarCars} />
-
-                    </div>
-                    <div>
-                        <Link href="/car/cars" className={styles.ViewButton}>View other cars</Link>
-                    </div>
-                </div>
-            </section>
+            <ViewSimilarCars allSimilarCars={allSimilarCars}/>
 
             {/* bottom banner */}
             <section className="bg_color">
@@ -420,14 +419,14 @@ function CarInfoDetailed(props) {
                         <ContactModal onClose={() => setShowContactModal(false)} contactInfo={props.carInfo} />
                     )}
 
-                    {!showContactModal ? (
+                    {/* {!showContactModal ? ( */}
                         <button
                             className={styles.contactSeller}
-                            onClick={() => setShowContactModal(true)}
+                            onClick={checkAuthentication}
                         >
                             <span className={styles.phone_icon}><PhoneIcon2 /></span><span className={styles.ContactSeller}> Contact Seller</span>
                         </button>
-                    ) : null}
+                    {/* ) : null} */}
                 </div>
 
 

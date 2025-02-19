@@ -33,12 +33,12 @@ function viewCarDetails(){
 };
 
   return (
-    <div className={`${styles.ad_details} ${props.width=="Full"?styles.full_width:""}`}>
-      <Card className={`border shadow-lg ${styles.ad_details_card} ${props.carInfo.isSold?styles.ad_details_card_sold:""}`}>
+    <div className={`${styles.ad_details} ${props.width=="Full"?styles.full_width:""}`} onClick={viewCarDetails}>
+      <Card className={`border shadow-lg ${styles.ad_details_card} ${props.carInfo.isSold?styles.ad_details_card_sold:""} `} onClick={viewCarDetails}>
 
       {props.carInfo.isSold && <><div className={styles.sold_overlay}></div> <div className={styles.sold}>SOLD</div></>}
 
-        <div className={styles.ad_image}>
+        <div className={`${styles.ad_image}  `}>
 
         
         
@@ -49,7 +49,7 @@ function viewCarDetails(){
           {props.carInfo.totalViews > 0 ? props.carInfo.totalViews : 0}
         </div>   
       
-       { <CarImagesSwiperHome images={props.carInfo.carImagesList} carId={props.carInfo.carId} onImageClick="ViewCarDetails" viewCarDetails={viewCarDetails} />}
+       { <CarImagesSwiperHome images={props.carInfo.carImagesList} carId={props.carInfo.carId}  viewCarDetails={viewCarDetails} onClick={viewCarDetails} />}
         </div>
 
 <CarInfoContent carInfo={props.carInfo} onClick={viewCarDetails} />

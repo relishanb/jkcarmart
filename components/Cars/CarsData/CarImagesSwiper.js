@@ -32,7 +32,7 @@ function CarImagesSwiper(props) {
 
   return (
     <>
-      <div className="swiper-container">
+      <div className="swiper-container ">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

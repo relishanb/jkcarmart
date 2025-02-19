@@ -24,11 +24,9 @@ export const EligibilityForm = ({ closeModal, carId }) => {
 
  const handleChange = (e) => {
     if (e.target) {
-      // Handle standard form elements
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
     } else {
-      // Handle react-select
       setFormData({ ...formData, employmenttype: e.value });
     }
   };

@@ -1,0 +1,92 @@
+
+.ad_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+    row-gap:24px;
+}
+.list_header{
+    display: fixed;
+    justify-content: space-between;    
+}
+.ad_list_title {
+    font-size:16px;
+    margin-top:10;
+    margin-bottom:20px;
+
+    span:first-child{
+        font-weight: 600;
+    }
+    span:last-child{
+        font-weight: 400;        
+    }
+}
+.ad_view_more {
+    margin-top: 40px;
+    text-align:center;
+}
+.ad_show_count {
+    font-weight: 500;
+    color: #a1a1a1;
+    margin-bottom: 20px;
+}
+.user_details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: var(--primary_color_rgba_1);
+    font-size: 18px;    
+    font-weight: 500;    
+    padding: 10px 15px;
+    border-radius: 5px;
+    .name{
+        color: var(--primary_color);
+    }
+    .clear_user{
+       background-color: #fff;
+       padding: 5px 15px;
+       border-radius: 15px;
+       font-size: 14px;
+       color: #999;
+       cursor: pointer;
+    }
+    .clear_user:hover{
+        background-color: var(--primary_color);
+        color: #fff;
+     }
+}
+
+
+
+@media (max-width:767px){
+    .list_header{
+        margin-top: 80px;
+        > div{
+            left: 0;
+            box-shadow: unset;
+            background-color: unset;
+        }
+    }
+}
+@media (min-width: 768px){
+    .cars_section{
+        display: flex;
+        column-gap: 20px;
+    }
+    .cars_list{
+        overflow-y: auto;
+        width: calc(100% - 250px);
+    }
+}
+
+.list_dotted{
+    list-style: disc !important;
+    padding-left: 30px;
+    li:not(:last-child){
+        margin-bottom: 10px;
+    }
+}
+
+

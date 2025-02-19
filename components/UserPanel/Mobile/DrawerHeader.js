@@ -22,7 +22,9 @@ export const DrawerHeader = ({ setIsOpen }) => {
           color='black'
           onClick={navigateToUserPanel}
         />
-        <Image src="/logo.png" width={80} height={90} />
+        <Link href="/">
+          <Image src="/logo.png" width={80} height={90} />
+        </Link>
       </div>
       <div className="mt-1">
         <AppDownload />

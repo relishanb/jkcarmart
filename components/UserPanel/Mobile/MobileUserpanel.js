@@ -10,12 +10,14 @@ import Button from '@/components/UI/Button';
 import PostedCars from './PostedCars';
 import EditProfile from './EditProfile';
 import { useGetUserByUserIdQuery } from '@/store/apiServices/apiServices';
+import BottomNavbar from '@/components/BottomNavbar/BottomNavbar';
 
 export const MobileUserpanel = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [drawerContent, setDrawerContent] = useState(null);
 
   const toggleDrawer = (content = null) => {
+    window.scrollTo(0, 0);
     setDrawerContent(content);
     setIsOpen(!isOpen);
   };

@@ -26,17 +26,17 @@ const BottomNavbar = () => {
       <Link href="/">
         <div className="flex flex-col items-center text-gray-500">
           <PiHouse size={22} className={router.pathname === "/" ? "text-orange-500" : ""} />
-          <span className={router.pathname === "/" ? "text-orange-500 text-sm font-medium" : "text-sm"}>Home</span>
+          <span className={router.pathname === "/" ? "text-orange-500 text-sm font-medium" : "text-sm"}>Buy</span>
         </div>
       </Link>
 
       {/* Buy */}
-      <Link href="/buy">
+      {/* <Link href="/buy">
         <div className="flex flex-col items-center text-gray-500">
           <IoCarOutline size={22} className={router.pathname === "/buy" ? "text-orange-500" : ""} />
           <span className={router.pathname === "/buy" ? "text-orange-500 text-sm font-medium" : "text-sm"}>Buy</span>
         </div>
-      </Link>
+      </Link> */}
 
       {/* Sell */}
       <Link href="/sell">

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { EligibilityForm } from "./EligibilityForm";
-import clsx from "clsx";
 
 const LoanEligibility = ({ carId }) => {
   const [showModal, setShowModal] = useState(false);
@@ -26,8 +25,8 @@ const LoanEligibility = ({ carId }) => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative z-[10001]">
+        <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="relative ">
             <EligibilityForm closeModal={closeModal} carId={carId} />
           </div>
         </div>

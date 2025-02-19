@@ -32,7 +32,7 @@ function SearchBoxLocations() {
   function showCars(values) {
     dispatch(filterActions.updateSearchLocation(values.value));
     dispatch(filterActions.applyFilter());
-    route.push("/buy");
+    route.push("/");
     setIsDrawerOpen(false); 
   }
 
@@ -45,7 +45,7 @@ function SearchBoxLocations() {
     <div className="relative">
       {/* Search Input */}
       <div
-        className={`flex items-center border border-gray-300 bg-white rounded-full py-2 px-2 gap-8 cursor-pointer ${
+        className={`flex items-center border border-gray-300 bg-white rounded-full py-2.5 px-2 gap-8 cursor-pointer ${
           location ? "border-orange-500" : "border-gray-300"
         }`}
         onClick={() => setIsDrawerOpen(true)}

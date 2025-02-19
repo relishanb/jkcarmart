@@ -2,7 +2,7 @@ import React from 'react'
 
 export const BuyBottom = () => {
   return (
-    <section className="bg_white">
+    <section className="bg_white relative z-[-2]">
   <div className="container">
   <div className="sec-heading">
           <h2>

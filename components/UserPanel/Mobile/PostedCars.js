@@ -30,15 +30,20 @@ const PostedCars = () => {
 
   const filterCars = (status) => {
     if (status === "All") return cars;
-    return cars.filter((car) => car.postedCarStatus === status);
+    return cars.filter((car) => car.postedCarStatus === status || (status === "Sold" && car.isSold));
   };
 
   const displayedCars = filterCars(activeTab);
+  console.log(displayedCars)
 
   const toggleDrawer = (selectedCar) => {
-    setSelectedCar(selectedCar);
-    console.log("selected car", selectedCar)
-    setIsDrawerOpen(!isDrawerOpen);
+    if (selectedCar.postedCarStatus === "Pending") {
+      setSelectedCar(selectedCar);
+      console.log("selected car", selectedCar);
+      setIsDrawerOpen(!isDrawerOpen);
+    } else {
+      console.log("Only pending ads can be edited.");
+    }
   };
 
   const handleUpdateCar = (updatedCar) => {
@@ -49,21 +54,28 @@ const PostedCars = () => {
   };
 
   const handleSoldStatusChange = (carId, isSold) => {
-    console.log("status", isSold)
-    updateAdIsSold({ carId, isSold });
-    setCars((prevCars) =>
-      prevCars.map((car) => (car.car_ID === carId ? { ...car, isSold } : car))
-    );
+    console.log("status", isSold);
+    updateAdIsSold({ carId, isSold }).then(() => {
+      setCars((prevCars) =>
+        prevCars.map((car) =>
+          car.car_ID === carId ? { ...car, isSold, postedCarStatus: isSold ? "Sold" : car.postedCarStatus } : car
+        )
+      );
+      // Re-filter cars to update the displayed cars
+      setCars((prevCars) => filterCars(activeTab));
+      // If the car is marked as sold, switch to the "Sold" tab
+      if (isSold) {
+        setActiveTab("Sold");
+      }
+    }).catch((error) => {
+      console.error("Failed to update sold status", error);
+    });
   };
 
- 
-
   return (
-    <div className="pt-8 pb-20 overflow-auto max-h-screen mb-1 bg-gray-50 px-3">
-      <div>
-      </div>
+    <div className="pb-20 overflow-auto max-h-screen mb-1 bg-gray-50 ">
       {/* Tabs */}
-      <div className="flex mb-12 gap-2">
+      <div className="fixed bg-white w-full flex py-4 gap-2 px-3 z-50">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -89,11 +101,11 @@ const PostedCars = () => {
         <DrawerHeader setIsOpen={setIsDrawerOpen} />
         <div className="px-4">
           {selectedCar && (
-            <EditPostedAd 
-            id={selectedCar.car_ID} 
-            car={selectedCar} 
-            setIsDrawerOpen={setIsDrawerOpen} 
-            isSold={selectedCar.isSold} />
+            <EditPostedAd
+              id={selectedCar.car_ID}
+              car={selectedCar}
+              setIsDrawerOpen={setIsDrawerOpen}
+              isSold={selectedCar.isSold} />
           )}
         </div>
       </Drawer>

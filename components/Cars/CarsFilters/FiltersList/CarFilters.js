@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/UI/Button";
-import { FaFilter } from "react-icons/fa";
 
 import CarFilterByBrandInner from "../ByBrandModel/CarFilterByBrandInner";
 import CarFilterByMileageInner from "../CarFilterByMileageInner";
@@ -19,12 +18,11 @@ import { FaUndo } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { filterActions, filterNames } from '../../../../store/filters';
 
-
 import styles from "./CarFilters.module.scss";
 import { FilterIcon } from "@/components/Layout/Icons/Icons";
+import useHeroVisibility from "@/hooks/useHeroVisibility";
 
 function CarFilters() {
-
   const filters = [
     { text: "Price", value: filterNames.Price },
     { text: "Mileage", value: filterNames.Mileage },
@@ -43,22 +41,16 @@ function CarFilters() {
     setMobileFilterActive(!mobileFilterActive);
   }
 
-
   const dispatch = useDispatch();
-
-
+  const isHeroVisible = useHeroVisibility();
 
   useEffect(() => {
     dispatch(filterActions.fillFilterData());
   }, [dispatch]);
 
   const savedFilters = useSelector((state) => state.filter.storedFilterData);
-
-
-
   useEffect(() => {
     const savedFilterData = JSON.parse(localStorage.getItem('filterData') || '[]');
-
     if (savedFilterData.length > 0) {
       dispatch(filterActions.fillStoredFilterData(savedFilterData));
     } else {
@@ -66,9 +58,7 @@ function CarFilters() {
     }
   }, [dispatch]);
 
-
   const selectedFiltersCount = useSelector((state) => state.filter.selectedFiltersCount);
-
 
   let filterKeys = [];
   let i = 0;
@@ -89,23 +79,15 @@ function CarFilters() {
     localStorage.setItem('carFilters', JSON.stringify(savedFilters));
   }, [savedFilters]);
 
-
   return (
-
     <>
-
       <div className={styles.car_filters}>
-
         <div className={styles.car_filters_header}>
           <h3>Filters</h3>
           {filterKeys[0].length > 0 &&
             <span onClick={clearAllFilters}><FaUndo /> reset all</span>
           }
         </div>
-
-
-
-
         <CarFilterByPriceInner filterActive={filterKeys[0].includes(filterNames.Price)} />
         <CarFilterByMileageInner filterActive={filterKeys[0].includes(filterNames.Mileage)} />
         <CarFilterByRegistrationYearInner filterActive={filterKeys[0].includes(filterNames.RegistrationYear)} />
@@ -116,14 +98,10 @@ function CarFilters() {
         <CarFilterByTransmission filterActive={filterKeys[0].includes(filterNames.Transmission)} />
         <CarFilterBySeats filterActive={filterKeys[0].includes(filterNames.Seats)} />
         <CarFilterByColors filterActive={filterKeys[0].includes(filterNames.Color)} />
-
       </div>
-
-
-
       {mobileFilterActive && <MultiFilters toogleMobileFilter={toogleMobileFilter} />}
-
-      <div className={styles.car_filters_mobile}>
+      {/* mobile filters */}
+      <div className={`md:hidden flex gap-2 mt-[70px]  ${!isHeroVisible ? "fixed top-12 z-[-1] left-0 right-0 px-2 py-2 bg-white" : ""}`}>
         <div className={styles.car_filters_header}>
           <Button
             type="button"
@@ -135,7 +113,7 @@ function CarFilters() {
               <FilterIcon />{''}
             </span>
             <span className={styles.Text}>Filters </span>
-            <span className={styles.Count}>
+            <span className={`${styles.Count} ${!isHeroVisible ? "fixed  bottom-7" : "top-[352px]"}`}>
               <span>{selectedFiltersCount > 0 ? `${selectedFiltersCount}` : '0'}</span>
             </span>
           </Button>
@@ -156,13 +134,8 @@ function CarFilters() {
           ))}
         </div>
       </div>
-
-
-
-
     </>
-
   );
 }
-export default CarFilters;
 
+export default CarFilters;

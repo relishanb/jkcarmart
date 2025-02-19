@@ -75,6 +75,7 @@ function CarsList() {
     <>
       <section className="first_section">
         <div className="container mt-20 md:mt-40">
+          {/* car search and location search */}
           {isMobile && (
             <div className="flex justify-center gap-4 px-0">
               <MobSearchLocation />
@@ -93,6 +94,7 @@ function CarsList() {
                 </div>}
 
               <div className="flex justify-between mt-16 md:mt-0">
+                {/* heading */}
                 <span className={styles.ad_list_title}>
                   <span>{activeCarsList[0] ? activeCarsList[0].totalCars : 0} Used Cars</span>
                   <span> For Sale</span>

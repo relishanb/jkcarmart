@@ -22,7 +22,7 @@ export const MobileMenu = ({ dispatch, isSidebarActive, setIsSidebarActive, togg
   }
 
   const menuItems = [
-    { label: "Buy Car", route: "/buy" },
+    { label: "Buy Car", route: "/" },
     { label: "Sell Car", route: "/sell" },
     { label: "Dealers", route: "/dealers" },
     {
@@ -54,7 +54,7 @@ export const MobileMenu = ({ dispatch, isSidebarActive, setIsSidebarActive, togg
       onClick={toggleSidebar}
     >
       <div
-        className={`bg-white w-72 h-full absolute top-0 left-0 z-50 transform transition-transform duration-300 ease-in-out ${isSidebarActive ? "translate-x-0" : "-translate-x-full"
+        className={`bg-white w-72 h-full absolute top-0 left-0 z-[10000] transform transition-transform duration-300 ease-in-out ${isSidebarActive ? "translate-x-0" : "-translate-x-full"
           }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -159,12 +159,6 @@ export const MobileMenu = ({ dispatch, isSidebarActive, setIsSidebarActive, togg
             </div>
           </div>
 
-          {/* Logout Button (If Logged In) */}
-          {/* {authentication.isLoggedIn && (
-              <button className="text-red-500 mt-4 flex items-center" onClick={logOut}>
-                <FaSignOutAlt className="mr-2" /> Logout
-              </button>
-            )} */}
         </div>
       </div>
     </div>

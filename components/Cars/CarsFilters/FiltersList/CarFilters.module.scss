@@ -105,7 +105,7 @@
 
 }
 
-.filter_btn{
+.filter_btn {
     margin-right: 12px;
 }
 
@@ -114,7 +114,7 @@
     padding: 6px 8px;
 
 
-    margin-top: 80px;
+    margin-top: 1px;
     border-radius: 8px;
     background: var(--foundation-neutral-neutral-50, #F3F3F3);
     border: none;
@@ -132,7 +132,7 @@
         white-space: nowrap;
     }
 
- 
+
 
     svg {
         color: #fff !important;
@@ -147,8 +147,8 @@
 
 .Count {
     position: absolute;
-    left:75px;
-  top: 150px;
+    left: 75px;
+    // top: 347px;
     border-radius: 40px;
     border: 1px solid var(--foundation-primary-primary-100, #F7D2B9);
     background: var(--foundation-primary-primary-400, #E98A4A);
@@ -194,7 +194,7 @@
         border-radius: 12px;
         border: 1px solid var(--foundation-primary-primary-500, #E46D1D);
         background: var(--foundation-primary-primary-50, #FCF0E8);
-      }
+    }
 
 }
 

@@ -8,7 +8,7 @@ function Footer() {
 
 
   return (
-    <footer className="footer_area bottom-20">
+    <footer className="footer_area z-[-2] relative">
       <div className="footer_top">
 
         <div className="container">

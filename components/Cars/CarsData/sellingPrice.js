@@ -1,27 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRupeeSign } from "react-icons/fa";
 import { MdAddCall } from "react-icons/md";
-// import { FiArrowRight } from "react-icons/fi";
 import { useUpdateSellerViewsMutation } from "@/store/apiServices/apiServices";
 import { EyeIconJK } from "@/components/Layout/Icons/Icons";
 import styles from "./sellingPrice.module.scss";
 import { EligibilityForm } from "./EligibilityForm";
 import EmiCalculatorTwo from "@/components/Emicalculator/EmicalculatorTwo";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticationActions } from "@/store/authentication";
 
 function SellingPrice(props) {
   const [showContactInfo, setShowContactInfo] = useState(false);
   const [showEMIModal, setShowEMIModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [UpdateSellerView] = useUpdateSellerViewsMutation();
+  const [isTryingToViewContact, setIsTryingToViewContact] = useState(false);
 
-  const handleContactSellerClick = (userId) => {
-    setShowContactInfo(true);
-    UpdateSellerView(userId);
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.authentication.isLoggedIn);
+
+  useEffect(() => {
+    if (isLoggedIn && isTryingToViewContact) {
+      setShowContactInfo(true);
+      UpdateSellerView(props.carInfo.user_ID);
+      setIsTryingToViewContact(false);
+    }
+  }, [isLoggedIn, isTryingToViewContact, UpdateSellerView, props.carInfo.user_ID]);
+
+  const checkAuthen = (userId) => {
+    if (isLoggedIn) {
+      setShowContactInfo(true);
+      UpdateSellerView(userId);
+    } else {
+      setIsTryingToViewContact(true);
+      dispatch(authenticationActions.toggleAuthenticationModel(true));
+    }
   };
 
   const closeModal = () => {
-    setShowModal(false)
-
+    setShowModal(false);
   };
 
   const numDifferentiation = (val) => {
@@ -71,17 +88,14 @@ function SellingPrice(props) {
         </button>
       </div>
 
-
       {/* Contact Seller Section */}
       <div className={`${styles.contactContainer} flex flex-col items-center gap-3 p-4 border bg-white border-gray-200 rounded-md `}>
-        {!showContactInfo && (
           <button
             className={`view_car_seller_details ${styles.contactSeller} bg-orange-500 text-white w-full rounded-md py-2`}
-            onClick={() => handleContactSellerClick(props.carInfo.user_ID)}
+            onClick={() => checkAuthen(props.carInfo.user_ID)}
           >
             Contact Seller
           </button>
-        )}
         <div className={styles.EyeIconCont}>
           <span className={styles.EyeIcon}><EyeIconJK /></span>
           <span className={styles.EyeIconText}>{props.carInfo.totalViews} people are interested</span>
